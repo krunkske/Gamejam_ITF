@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const FIREBALL_SCENE = preload("res://Scenes/Spells/fireball.tscn")
+const WIND_SCENE = preload("res://Scenes/Spells/wind.tscn")
 
 @export var speed: float = 250.0
 @export var max_health: int = 100
@@ -89,7 +90,13 @@ func _input(event: InputEvent) -> void:
 func attack() -> void:
 	attacking = true
 	animation.play("attack")
-	shoot_fireball()
+	
+	# Randomly choose between fireball and wind
+	var spell_choice = randi() % 2
+	if spell_choice == 0:
+		shoot_fireball()
+	else:
+		shoot_wind()
 
 	await animation.animation_finished
 
@@ -101,3 +108,10 @@ func shoot_fireball() -> void:
 	get_tree().current_scene.add_child(fireball)
 	fireball.global_position = global_position
 	fireball.direction = global_position.direction_to(get_global_mouse_position())
+
+
+func shoot_wind() -> void:
+	var wind = WIND_SCENE.instantiate()
+	get_tree().current_scene.add_child(wind)
+	wind.global_position = global_position
+	wind.direction = global_position.direction_to(get_global_mouse_position())
