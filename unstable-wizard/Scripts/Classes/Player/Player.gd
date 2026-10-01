@@ -4,18 +4,31 @@ class_name Player
 const FIREBALL_SCENE = preload("res://Scenes/Spells/fireball.tscn")
 
 @export var speed: float = 250.0
+@export var max_health: int = 100
+@export var damage_cooldown: float = 0.8
 
 var attacking: bool = false
+var health: int
+var damage_cooldown_remaining := 0.0
+var dead := false
 
 @onready var animation: AnimatedSprite2D = $anination
+@onready var health_bar: ProgressBar = $HUD/HealthBar
 
 
 func _ready() -> void:
 	# Attack maar één keer afspelen
 	animation.sprite_frames.set_animation_loop("attack", false)
+	health = max_health
+	health_bar.max_value = max_health
+	health_bar.value = health
 
 
 func _physics_process(delta: float) -> void:
+	if dead:
+		return
+	damage_cooldown_remaining = maxf(damage_cooldown_remaining - delta, 0.0)
+
 	var input_dir := Vector2(
 		Input.get_axis("ui_left", "ui_right"),
 		Input.get_axis("ui_up", "ui_down")
@@ -52,9 +65,22 @@ func _push_colliding_enemies() -> void:
 		if collider is CharacterBody2D and collider.has_method("apply_knockback"):
 			collider.apply_knockback(250.0, self)
 
+func take_damage(amount: int) -> void:
+	if dead or damage_cooldown_remaining > 0.0:
+		return
+
+	health = maxi(health - amount, 0)
+	health_bar.value = health
+	damage_cooldown_remaining = damage_cooldown
+	if health == 0:
+		dead = true
+		velocity = Vector2.ZERO
+		animation.play("idle")
+		set_process_input(false)
+
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if not dead and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not attacking:
 				attack()

@@ -72,6 +72,20 @@ animations = [{
 radius = 11.0
 height = 28.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_background"]
+bg_color = Color(0.12, 0.12, 0.12, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_fill"]
+bg_color = Color(0.9, 0.08, 0.12, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="player" type="CharacterBody2D" unique_id=114388994]
 collision_layer = 2
 collision_mask = 5
@@ -86,3 +100,25 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_player")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Heart" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.95, 0.08, 0.12, 1)
+theme_override_font_sizes/font_size = 24
+text = "♥"
+
+[node name="HealthBar" type="ProgressBar" parent="HUD"]
+offset_left = 54.0
+offset_top = 22.0
+offset_right = 254.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/background = SubResource("StyleBoxFlat_health_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
+show_percentage = true

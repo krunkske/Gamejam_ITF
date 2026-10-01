@@ -76,6 +76,10 @@ func _physics_process(delta):
 	
 	velocity = velocity.lerp(direction*speed, 10 * delta) + knockback
 	move_and_slide()
+	for collision_index in get_slide_collision_count():
+		if get_slide_collision(collision_index).get_collider() == player:
+			player.take_damage(damage)
+			break
 	
 
 	$AnimatedSprite2D.play()
