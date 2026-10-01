@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cc2ei6ihbiifd"]
 
-[ext_resource type="Script" uid="uid://bjl7aqhcypl0f" path="res://Scripts/Classes/Spell/Spell.gd" id="1_toa43"]
+[ext_resource type="Script" uid="uid://iwrvrxwulvqf" path="res://Scripts/Classes/Spell/FireBall.gd" id="1_f5kvh"]
 [ext_resource type="Texture2D" uid="uid://brq35cm45ygdp" path="res://Scenes/Spells/fireball.png" id="2_f5kvh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnfac"]
@@ -130,7 +130,7 @@ radius = 8.0
 radius = 49.25444
 
 [node name="FireBall" type="Area2D" unique_id=1622427555]
-script = ExtResource("1_toa43")
+script = ExtResource("1_f5kvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1407521387]
 position = Vector2(-7, 0)
@@ -145,3 +145,5 @@ shape = SubResource("CircleShape2D_toa43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" unique_id=1920601676]
 shape = SubResource("CircleShape2D_qwq6p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
