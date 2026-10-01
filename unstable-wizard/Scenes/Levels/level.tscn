@@ -2,5 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dw6cc8bs52v30" path="res://Scripts/Classes/Levels/Level.gd" id="1_u52ul"]
 
-[node name="Level" type="TileMapLayer" unique_id=1688642627]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_g2qug"]
+vertices = PackedVector2Array(508.75, 302.70313, 58.84375, 290.2578, 55.15625, 63.96875, 503.21875, 63.023438)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(45, 54, 513, 53, 519, 313, 49, 300)])
+
+[node name="Level" type="Node2D" unique_id=1135496085]
 script = ExtResource("1_u52ul")
+
+[node name="base" type="TileMapLayer" parent="." unique_id=1367293202]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=29937743]
+navigation_polygon = SubResource("NavigationPolygon_g2qug")

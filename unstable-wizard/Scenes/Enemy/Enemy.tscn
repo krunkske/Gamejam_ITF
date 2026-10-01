@@ -2,5 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dp5tdi8qmmkmb" path="res://Scripts/Classes/Enemies/enemy.gd" id="1_m1htj"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=338898116]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1u57"]
+radius = 58.034473
+
+[node name="enemy" type="CharacterBody2D" unique_id=338898116]
 script = ExtResource("1_m1htj")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=186954524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1785950812]
+shape = SubResource("CircleShape2D_i1u57")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840137289]
