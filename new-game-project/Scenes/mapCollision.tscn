@@ -1,0 +1,979 @@
+[gd_scene load_steps=41 format=3 uid="uid://dm554cq81fehe"]
+
+[ext_resource type="Texture2D" uid="uid://bbggtkk8atkog" path="res://Assets/map/map v2.png" id="1_h0kil"]
+[ext_resource type="Texture2D" uid="uid://ci32egy3aqoc0" path="res://Assets/prop_radius_0.25.png" id="2_bhuks"]
+[ext_resource type="Texture2D" uid="uid://dq1a1wvfs8arq" path="res://Assets/map/afdakje.png" id="2_imoil"]
+[ext_resource type="PackedScene" uid="uid://dyj6oy1vm4kit" path="res://Scenes/lantern.tscn" id="2_urm4c"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_v1mjk"]
+vertices = PackedVector2Array(783, 5578, 2977, 5429, 3097, 5428, 3105, 5428, 3105, 5629, 849, 5620, 1723, 4253, 929, 4243, 782, 4166, 782, 4103, 929, 4053, 1839, 4032, 860, 102, 858, 762, 857, 128, 857, 65, 2751, 2915, 2765, 2027, 3096, 74, 3099, 3529, 2849, 3131, 2779, 1054, 2997, 128, 2766, 1921, 1501, 2687, 1647, 2479, 2060, 2027, 2060, 2899, 1403, 2861, 1501, 2624, 1646, 1972, 2043, 1925, 1441, 2480, 1445, 2624, 2216, 3520, 2225, 4402, 2217, 4491, 1728, 4751, 1839, 3495, 2978, 3519, 2849, 3194, 2997, 65, 3096, -66, 1720, 4881, 2224, 5429, 1723, 5429, 2755, 3521, 2755, 3520, 2793, 3194, 2043, 1054, 1642, 1200, 1640, 732, 2035, 971, 853, 1689, 849, 2483, 628, 1765, 628, 1702, 2941, 128, 2780, 972, 855, 1201, 609, 813, 609, 750, 801, 128, 2794, 93, 2941, 65, 68, -66, 2032, 95, 2977, 4402, 2977, 4499, 1236, 728, 1246, 540, 1628, 540, 1218, 1979, 1219, 1843, 1642, 1846, 783, 5515, 1639, 1338, 855, 1338, 1630, 100, 1315, 4881, 1316, 4754, 923, 5431, 356, 781, 61, 780, 801, 65, 553, 750, 727, 5578, 59, 5627, 62, 2494, 356, 2495, 727, 5515, 1445, 2687, 990, 2687, 990, 2624, 948, 2483, 935, 2624, 1403, 3495, 849, 5623, 737, 5622, 572, 1702, 2793, 3131, 727, 4166, 925, 4258, 727, 4103, 572, 1765, 934, 2861, 553, 813, 928, 4259, 934, 2687)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19, 20), PackedInt32Array(21, 22, 18, 17, 23), PackedInt32Array(24, 25, 26, 27, 28), PackedInt32Array(25, 24, 29), PackedInt32Array(26, 25, 30, 31), PackedInt32Array(32, 25, 29, 33), PackedInt32Array(6, 11, 34, 35, 36, 37), PackedInt32Array(34, 11, 38), PackedInt32Array(19, 39, 40, 20), PackedInt32Array(18, 22, 41, 42), PackedInt32Array(43, 37, 36, 44, 45), PackedInt32Array(40, 39, 46, 47, 48), PackedInt32Array(49, 31, 30, 50, 51, 52), PackedInt32Array(53, 54, 55, 56), PackedInt32Array(57, 22, 21, 58), PackedInt32Array(14, 13, 59, 60, 61, 62), PackedInt32Array(63, 64, 57, 58), PackedInt32Array(65, 42, 41, 64), PackedInt32Array(65, 64, 63, 66), PackedInt32Array(67, 39, 19, 2, 68), PackedInt32Array(51, 69, 70, 71), PackedInt32Array(30, 72, 73, 74), PackedInt32Array(44, 1, 0, 75), PackedInt32Array(31, 23, 17, 26), PackedInt32Array(50, 30, 74, 76), PackedInt32Array(59, 50, 76, 77), PackedInt32Array(52, 58, 21, 49), PackedInt32Array(66, 52, 51, 71, 78), PackedInt32Array(65, 66, 78, 15), PackedInt32Array(2, 1, 68), PackedInt32Array(67, 68, 36, 35), PackedInt32Array(43, 79, 80, 37), PackedInt32Array(45, 44, 75, 81), PackedInt32Array(82, 83, 65, 84, 62, 85), PackedInt32Array(86, 87, 88, 89, 90), PackedInt32Array(33, 91, 28, 92, 93, 32), PackedInt32Array(94, 32, 93, 95), PackedInt32Array(54, 94, 95), PackedInt32Array(38, 96, 28), PackedInt32Array(4, 97, 5), PackedInt32Array(86, 0, 5, 98, 87), PackedInt32Array(59, 77, 53, 56, 99, 60), PackedInt32Array(78, 12, 15), PackedInt32Array(65, 15, 84), PackedInt32Array(100, 48, 47, 34, 38, 28, 27), PackedInt32Array(81, 75, 90, 89, 101), PackedInt32Array(8, 7, 102), PackedInt32Array(9, 103, 89, 104, 55, 54, 105, 10), PackedInt32Array(62, 61, 85), PackedInt32Array(82, 85, 106, 89), PackedInt32Array(89, 106, 60, 99), PackedInt32Array(102, 107, 81), PackedInt32Array(8, 102, 81, 101), PackedInt32Array(103, 101, 89), PackedInt32Array(89, 99, 104), PackedInt32Array(16, 20, 100, 27), PackedInt32Array(91, 24, 28), PackedInt32Array(92, 28, 105, 108), PackedInt32Array(108, 105, 54), PackedInt32Array(108, 54, 95)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(59, -76, 51, 790, 346, 791, 346, 2485, 53, 2484, 49, 5638, 737, 5632, 737, 5565.48, 737, 5525, 773, 5525, 773, 5568, 737, 5568, 737, 5632, 932, 5630, 939, 4254, 773, 4156, 737, 4156, 737, 4113, 773, 4113, 773, 4156, 938.837, 4058, 944, 2871, 857, 2870, 862.996, 1688.75, 618, 1712, 618, 1755, 582, 1755, 582, 1712, 618, 1712, 863, 1692, 867.703, 761.443, 599, 760, 599, 803, 563, 803, 563, 760, 599, 760, 868, 762, 870, 112, 847, 118, 811, 118, 811, 75, 847, 75, 847, 118, 870, 112, 1620, 110, 1618, 530, 1236, 530, 1226, 738, 1630, 742, 1632, 1190, 486, 1192, 489, 1348, 1629, 1348, 1632, 1836, 1210, 1833, 1208, 1990, 1636, 1982, 1637, 2469, 1441.28, 2470.19, 1455, 2634, 1491, 2634, 1491, 2677, 1455, 2677, 1455, 2634, 1442, 2470, 947.6, 2473.2, 945, 2634, 980, 2634, 980, 2677, 944, 2677, 945, 2634, 948, 2473, 652, 2475, 677, 2871, 1393, 2871, 1393, 3505, 1829, 3505, 1829, 4022, 773, 4047, 771, 4251, 1713, 4263, 1718, 4741, 1307, 4745, 1305, 4891, 1710, 4891, 1713, 5419, 875, 5422, 839, 5633, 3116, 5640, 3115, 5420, 2234, 5419, 2227, 4501, 3017, 4510, 3013, 4393, 2235, 4392, 2226, 3530, 2774, 3530, 2750, 2906, 2070, 2889, 2070, 2037, 2945, 2037, 2949, 1911, 2053, 1915, 2053, 1064, 2892, 1065, 2912, 963, 2045, 961, 2042, 105, 2784, 103, 2738, 3141, 2803, 3141, 2839, 3141, 2839, 3184, 2803, 3184, 2803, 3141, 2738, 3141, 2745, 3532, 2967.7, 3529.47, 2967, 5454, 3107, 5454, 3109, 3529, 3106, 74, 2987, 75, 2987, 118, 2951, 118, 2951, 75, 2987, 75, 3106, 76, 3106, -77)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buaku"]
+size = Vector2(94, 6495)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fodgc"]
+size = Vector2(3993, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8xe7"]
+size = Vector2(94, 6514)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh1kq"]
+size = Vector2(3986, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6igir"]
+size = Vector2(685, 805)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvf4j"]
+size = Vector2(685, 805)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa7we"]
+size = Vector2(715, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q318q"]
+size = Vector2(715, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jfp"]
+size = Vector2(305, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umf75"]
+size = Vector2(685, 395)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ntoq"]
+size = Vector2(825, 470)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erow2"]
+size = Vector2(290, 275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc1kd"]
+size = Vector2(685, 370)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sra5d"]
+size = Vector2(390, 635)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkmt"]
+size = Vector2(683, 865)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gemgx"]
+size = Vector2(680, 805)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rja1p"]
+size = Vector2(685, 805)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhma1"]
+size = Vector2(715, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erjy8"]
+size = Vector2(305, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnoir"]
+size = Vector2(715, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kab6a"]
+size = Vector2(278, 1660)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y7kp4"]
+polygon = PackedVector2Array(325, 800, 325, 2460, 48, 2460, 47, 800)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_85n38"]
+polygon = PackedVector2Array(970, 2895, 970, 4000, 1795, 4000, 1795, 3530, 1360, 3530, 1360, 2895)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cv2pk"]
+polygon = PackedVector2Array(965, 4285, 1680, 4285, 1680, 4715, 1270, 4715, 1270, 4920, 1680, 4920, 1680, 5400, 965, 5400)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8eckg"]
+polygon = PackedVector2Array(900, 125, 1585, 125, 1585, 495, 1190, 495, 1190, 770, 1585, 770, 1585, 1165, 900, 1165)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hkg67"]
+polygon = PackedVector2Array(885, 1375, 1600, 1375, 1600, 1805, 1190, 1805, 1190, 2010, 1600, 2010, 1600, 2440, 885, 2440)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yiiuq"]
+polygon = PackedVector2Array(2070, 125, 2755, 125, 2755, 930, 2070, 930)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fae08"]
+polygon = PackedVector2Array(2085, 1085, 2770, 1085, 2770, 1890, 2085, 1890)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_031ro"]
+polygon = PackedVector2Array(2095, 2055, 2780, 2055, 2780, 2860, 2095, 2860)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vcn5s"]
+polygon = PackedVector2Array(2265, 3550, 2945, 3550, 2945, 4355, 2265, 4355)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_14784"]
+polygon = PackedVector2Array(2265, 4535, 2948, 4535, 2948, 5400, 2265, 5400)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b27f4"]
+polygon = PackedVector2Array(3152, 5644, 3152, 5738, -49, 5738, -49, 5644)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jmj67"]
+polygon = PackedVector2Array(-48, 5644, 47, 5644, 47, -90, -48, -90)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0geco"]
+polygon = PackedVector2Array(-47, -184, 3153, -184, 3153, -90, -47, -90)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ma16y"]
+polygon = PackedVector2Array(3118, -90, 3213, -90, 3213, 5644, 3118, 5644)
+
+[node name="mapCollision" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1500, 2782)
+scale = Vector2(5, 5)
+texture = ExtResource("1_h0kil")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.72549)
+z_index = 5
+position = Vector2(2345, 3185.5)
+scale = Vector2(5.00935, 5.17583)
+texture = ExtResource("2_imoil")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_v1mjk")
+
+[node name="wall_collision" type="CollisionShape2D" parent="."]
+position = Vector2(3166, 2332.5)
+shape = SubResource("RectangleShape2D_buaku")
+
+[node name="ColorRect" type="ColorRect" parent="wall_collision"]
+offset_left = -48.0
+offset_top = -2425.0
+offset_right = 47.0
+offset_bottom = 3327.0
+color = Color(0.898039, 0.898039, 0.898039, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="wall_collision2" type="CollisionShape2D" parent="."]
+position = Vector2(1550.5, 5691)
+shape = SubResource("RectangleShape2D_fodgc")
+
+[node name="ColorRect3" type="ColorRect" parent="wall_collision2"]
+offset_left = -1598.5
+offset_top = -47.0
+offset_right = 1601.5
+offset_bottom = 47.0
+color = Color(0.899258, 0.899258, 0.899258, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="wall_collision3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2342)
+shape = SubResource("RectangleShape2D_b8xe7")
+
+[node name="ColorRect2" type="ColorRect" parent="wall_collision3"]
+offset_left = -47.5
+offset_top = -2436.0
+offset_right = 47.5
+offset_bottom = 3318.0
+color = Color(0.899258, 0.899258, 0.899258, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="wall_collision4" type="CollisionShape2D" parent="."]
+position = Vector2(1555, -136)
+shape = SubResource("RectangleShape2D_xh1kq")
+
+[node name="ColorRect4" type="ColorRect" parent="wall_collision4"]
+offset_left = -1602.0
+offset_top = -48.0
+offset_right = 1598.0
+offset_bottom = 46.0
+color = Color(0.899258, 0.899258, 0.899258, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2437.5, 2457.5)
+shape = SubResource("RectangleShape2D_6igir")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2412.5, 527.5)
+shape = SubResource("RectangleShape2D_cvf4j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1242.5, 2225)
+shape = SubResource("RectangleShape2D_aa7we")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(1242.5, 1590)
+shape = SubResource("RectangleShape2D_q318q")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(1037.5, 1907.5)
+shape = SubResource("RectangleShape2D_w8jfp")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(1242.5, 967.5)
+shape = SubResource("RectangleShape2D_umf75")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(1382.5, 3765)
+shape = SubResource("RectangleShape2D_8ntoq")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(1045, 632.5)
+shape = SubResource("RectangleShape2D_erow2")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(1242.5, 310)
+shape = SubResource("RectangleShape2D_mc1kd")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2(1165, 3212.5)
+shape = SubResource("RectangleShape2D_sra5d")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+position = Vector2(2606.5, 4967.5)
+shape = SubResource("RectangleShape2D_1rkmt")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
+position = Vector2(2605, 3952.5)
+shape = SubResource("RectangleShape2D_gemgx")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="."]
+position = Vector2(2427.5, 1487.5)
+shape = SubResource("RectangleShape2D_rja1p")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="."]
+position = Vector2(1322.5, 4500)
+shape = SubResource("RectangleShape2D_hhma1")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="."]
+position = Vector2(1117.5, 4817.5)
+shape = SubResource("RectangleShape2D_erjy8")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="."]
+position = Vector2(1322.5, 5160)
+shape = SubResource("RectangleShape2D_mnoir")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="."]
+position = Vector2(186, 1630)
+shape = SubResource("RectangleShape2D_kab6a")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(150, 75)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D2" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(540, 75)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D2"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D56" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(996, 21)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D56"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D57" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1386, 21)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D57"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D58" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1774, 15)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D58"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D59" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2164, 15)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D59"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D60" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2450, 7)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D60"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D61" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2840, 7)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D61"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D3" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(540, 520)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D3"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D5" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(628, 881)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D5"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D6" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(628, 1326)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D6"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D7" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(621, 1790)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D7"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D62" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2956, 240)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D62"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D63" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2956, 685)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D63"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D64" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2949, 1149)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D64"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D65" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2953, 1399)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D65"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D66" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2953, 1844)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D66"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D67" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2946, 2308)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D67"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D68" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2950, 2547)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D68"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D69" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2950, 2992)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D69"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D70" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2943, 3456)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D70"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D8" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(621, 2235)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D8"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D9" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(601, 2684)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D9"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D10" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(601, 3129)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D10"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D11" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(594, 3593)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D11"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D12" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(594, 4038)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D12"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D13" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(601, 4376)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D13"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D14" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(594, 4840)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D14"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D15" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(594, 5285)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D15"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D16" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(271, 2684)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D16"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D17" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(271, 3129)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D17"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D18" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(264, 3593)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D18"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D19" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(264, 4038)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D19"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D20" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(271, 4376)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D20"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D21" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(264, 4840)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D21"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D22" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(264, 5285)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D22"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D23" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(594, 4840)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D23"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D24" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(594, 5285)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D24"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D25" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(264, 4840)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D25"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D26" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(264, 5285)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D26"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D27" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2123, 5079)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D27"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D28" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2123, 5524)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D28"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D29" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1793, 5079)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D29"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D30" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1793, 5524)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D30"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D35" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2123, 4282)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D35"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D36" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2123, 4727)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D36"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D37" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1793, 4282)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D37"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D39" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1523, 4134)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D39"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D41" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1979, 3877)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D41"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D42" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1470, 4862)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D42"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D40" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1193, 4134)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D40"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D38" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1793, 4727)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D38"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D43" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1874, 2893)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D43"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D49" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1834, 2480)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D49"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D50" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1835, 1923)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D50"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D51" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1379, 1965)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D51"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D52" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1230, 1272)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D52"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D53" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1837, 1270)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D53"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D54" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1832, 785)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D54"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D55" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1414, 698)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D55"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D44" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1874, 3338)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D44"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D45" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1544, 2893)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D45"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D47" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1386, 2668)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D47"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D48" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1056, 2668)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D48"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D46" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1544, 3338)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D46"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D31" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1425, 5528)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D31"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D32" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(1095, 5528)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D32"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D33" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2776, 5510)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D33"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D34" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(2446, 5510)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D34"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="Marker2D4" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+position = Vector2(150, 520)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D4"]
+position = Vector2(-1, -1)
+rect = Rect2(0, 0, 2, 2)
+
+[node name="playerSpawn" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+position = Vector2(1723, 3093)
+
+[node name="Node2D2" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+position = Vector2(345, 313)
+
+[node name="Node2D3" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+position = Vector2(1855, 426)
+
+[node name="Node2D4" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+position = Vector2(439, 4218)
+
+[node name="shopSpawn" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(1470, 4814)
+
+[node name="Marker2D2" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(876, 4817)
+
+[node name="Marker2D3" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(171, 2554)
+
+[node name="Marker2D4" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(335, 521)
+
+[node name="Marker2D5" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(1416, 637)
+
+[node name="Marker2D6" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(2343, 3172)
+
+[node name="Marker2D7" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(2827, 1468)
+
+[node name="Marker2D8" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(2417, 86)
+
+[node name="Marker2D9" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(2603, 5449)
+
+[node name="Marker2D10" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+position = Vector2(1379, 1897)
+
+[node name="light" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="light"]
+color = Color(0.447059, 0.447059, 0.447059, 1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_y7kp4")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_85n38")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_cv2pk")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_8eckg")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_hkg67")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_yiiuq")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_fae08")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_031ro")
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_vcn5s")
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_14784")
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_b27f4")
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_jmj67")
+
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_0geco")
+
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="light"]
+occluder = SubResource("OccluderPolygon2D_ma16y")
+
+[node name="PointLight2D" type="PointLight2D" parent="light" groups=["lights"]]
+position = Vector2(1442, 4667)
+rotation = 1.57079
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="light" groups=["lights"]]
+position = Vector2(1516, 4667)
+rotation = 1.57079
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(2473, 5431)
+rotation = 1.57079
+energy = 0.5
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(2870, 5431)
+rotation = 1.57079
+energy = 0.5
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D5" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(1547, 2375)
+rotation = 1.57079
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D6" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(1547, 2451)
+rotation = 1.57079
+energy = 0.6
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D7" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(1463, 2451)
+rotation = 1.57079
+energy = 0.5
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(1552, 4011)
+rotation = 1.57079
+energy = 0.8
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D9" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(1638, 4011)
+rotation = 1.57079
+energy = 0.8
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D10" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(2438, 917.316)
+rotation = 1.57079
+scale = Vector2(0.707813, 1)
+energy = 0.5
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="PointLight2D11" type="PointLight2D" parent="light" groups=["lights"]]
+z_index = 1
+position = Vector2(2517, 922)
+rotation = 1.57079
+scale = Vector2(0.744441, 1)
+energy = 0.5
+texture = ExtResource("2_bhuks")
+texture_scale = 2.0
+
+[node name="lanterns" type="Node" parent="."]
+
+[node name="lantern" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(829, 51)
+
+[node name="lantern3" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(1630, 315)
+hanging = true
+flipped = true
+
+[node name="lantern7" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(1630, 987)
+hanging = true
+flipped = true
+
+[node name="lantern12" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(2048, 1495)
+hanging = true
+
+[node name="lantern13" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(2228, 3874)
+hanging = true
+
+[node name="lantern14" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(2228, 4959)
+hanging = true
+
+[node name="lantern2" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(581, 736)
+
+[node name="lantern4" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(962, 2610)
+
+[node name="lantern5" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(1454, 2617)
+
+[node name="lantern6" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(755, 5486)
+
+[node name="lantern9" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(755, 4089)
+
+[node name="lantern10" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(2821, 3117)
+
+[node name="lantern11" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(2969, 51)
+
+[node name="lantern8" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+position = Vector2(600, 1688)

@@ -1,0 +1,137 @@
+[gd_scene load_steps=19 format=3 uid="uid://dl36vqmx2rkkp"]
+
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_2qvbx"]
+[ext_resource type="Texture2D" uid="uid://m67fjq3psyai" path="res://Assets/collectables/gold_coin.png" id="2_hgrqx"]
+[ext_resource type="Texture2D" uid="uid://vaq70ew5g6ji" path="res://Assets/collectables/silver_coin.png" id="3_q7fqp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dipxm"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hf6g"]
+atlas = ExtResource("2_hgrqx")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sv18"]
+atlas = ExtResource("2_hgrqx")
+region = Rect2(16, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr6hp"]
+atlas = ExtResource("2_hgrqx")
+region = Rect2(32, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrvhf"]
+atlas = ExtResource("2_hgrqx")
+region = Rect2(48, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uspjk"]
+atlas = ExtResource("2_hgrqx")
+region = Rect2(64, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex4px"]
+atlas = ExtResource("2_hgrqx")
+region = Rect2(80, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41pc3"]
+atlas = ExtResource("3_q7fqp")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6mh2"]
+atlas = ExtResource("3_q7fqp")
+region = Rect2(16, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryrlg"]
+atlas = ExtResource("3_q7fqp")
+region = Rect2(32, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opkp"]
+atlas = ExtResource("3_q7fqp")
+region = Rect2(48, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35d8v"]
+atlas = ExtResource("3_q7fqp")
+region = Rect2(64, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h2pu"]
+atlas = ExtResource("3_q7fqp")
+region = Rect2(80, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5478x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hf6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sv18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr6hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrvhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uspjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex4px")
+}],
+"loop": true,
+"name": &"large_coin",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41pc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6mh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryrlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35d8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h2pu")
+}],
+"loop": true,
+"name": &"medium_coin",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msg74"]
+radius = 25.0
+
+[node name="coin" type="Area2D" groups=["coin", "coins"]]
+scale = Vector2(3, 3)
+collision_layer = 64
+script = ExtResource("1_2qvbx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["coin"]]
+shape = SubResource("CircleShape2D_dipxm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["coin", "coins"]]
+position = Vector2(0, -0.133333)
+sprite_frames = SubResource("SpriteFrames_5478x")
+animation = &"large_coin"
+
+[node name="Timer" type="Timer" parent="." groups=["coin"]]
+wait_time = 30.0
+
+[node name="flicker_timer" type="Timer" parent="." groups=["coin"]]
+wait_time = 27.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["coin"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["coin"]]
+shape = SubResource("CircleShape2D_msg74")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="flicker_timer" to="." method="_on_flicker_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

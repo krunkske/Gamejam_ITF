@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://g4ip74adu6n8"]
+
+[ext_resource type="Script" path="res://Scripts/dog.gd" id="1_mdk3w"]
+[ext_resource type="SpriteFrames" uid="uid://dq6ivdqcda4jy" path="res://Assets/dog/1 Dog/dog1.tres" id="2_mg6br"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8dev"]
+size = Vector2(39.3333, 25.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqb6m"]
+size = Vector2(39.3333, 25.6667)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilrpf"]
+radius = 300.0
+
+[node name="dog" type="CharacterBody2D" groups=["dog"]]
+scale = Vector2(2, 2)
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_mdk3w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["dog"]]
+position = Vector2(0, -12)
+sprite_frames = ExtResource("2_mg6br")
+animation = &"attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dog"]]
+position = Vector2(-0.666667, -2.16667)
+shape = SubResource("RectangleShape2D_d8dev")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["dog"]]
+
+[node name="Area2D" type="Area2D" parent="." groups=["dog"]]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["dog"]]
+position = Vector2(-0.666667, -2.16667)
+shape = SubResource("RectangleShape2D_oqb6m")
+
+[node name="radius" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="radius"]
+shape = SubResource("CircleShape2D_ilrpf")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="radius" to="." method="_on_radius_area_entered"]
+[connection signal="area_exited" from="radius" to="." method="_on_radius_area_exited"]

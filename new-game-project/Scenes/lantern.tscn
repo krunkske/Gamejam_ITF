@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyj6oy1vm4kit"]
+
+[ext_resource type="Script" path="res://Scripts/lantern.gd" id="1_2x8hr"]
+[ext_resource type="Texture2D" uid="uid://b3d622ak7pav7" path="res://Assets/lights/hanging_lantern.png" id="1_r2ryr"]
+[ext_resource type="Texture2D" uid="uid://fjvbv84euxg4" path="res://Assets/lights/lantern.png" id="1_v48gh"]
+[ext_resource type="Texture2D" uid="uid://ckfbqx44aluju" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="2_81aja"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3aylp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r2ryr")
+}],
+"loop": true,
+"name": &"hanging_lantern",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v48gh")
+}],
+"loop": true,
+"name": &"lantern",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmh0w"]
+radius = 3.04138
+
+[node name="lantern" type="StaticBody2D"]
+z_index = 2
+scale = Vector2(2, 2)
+collision_layer = 256
+script = ExtResource("1_2x8hr")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 1
+position = Vector2(0, -6.5)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("2_81aja")
+texture_scale = 0.75
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3aylp")
+animation = &"hanging_lantern"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29)
+shape = SubResource("CircleShape2D_nmh0w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true

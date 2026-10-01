@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://d38g83mxltbt3"]
+
+[ext_resource type="Script" path="res://Scripts/heart.gd" id="1_uegn0"]
+[ext_resource type="Texture2D" uid="uid://du6ob67kgll0o" path="res://Assets/collectables/hearts.png" id="2_papj6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2c1r"]
+atlas = ExtResource("2_papj6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr0sc"]
+atlas = ExtResource("2_papj6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he5o5"]
+atlas = ExtResource("2_papj6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0jbr"]
+atlas = ExtResource("2_papj6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0c4t"]
+atlas = ExtResource("2_papj6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wkpv"]
+atlas = ExtResource("2_papj6")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ay7hh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2c1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr0sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he5o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0jbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0c4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wkpv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oex2o"]
+radius = 9.5
+
+[node name="heart" type="Area2D" groups=["heart"]]
+scale = Vector2(3, 3)
+collision_layer = 16
+script = ExtResource("1_uegn0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["heart", "hearts"]]
+sprite_frames = SubResource("SpriteFrames_ay7hh")
+frame_progress = 0.651419
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["heart", "hearts"]]
+shape = SubResource("CircleShape2D_oex2o")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="flicker_timer" type="Timer" parent="."]
+wait_time = 27.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

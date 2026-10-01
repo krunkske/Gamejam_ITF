@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://56vvo3hmtinj"]
+
+[ext_resource type="Texture2D" uid="uid://c7uouc0tl1l34" path="res://Assets/hand+fruit/fruitinhandsprite.png" id="1_h0pmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o4dy"]
+atlas = ExtResource("1_h0pmm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0nhm"]
+atlas = ExtResource("1_h0pmm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv7eu"]
+atlas = ExtResource("1_h0pmm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6kla"]
+atlas = ExtResource("1_h0pmm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfiex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o4dy")
+}],
+"loop": true,
+"name": &"apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0nhm")
+}],
+"loop": true,
+"name": &"banana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv7eu")
+}],
+"loop": true,
+"name": &"grape",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6kla")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="gun" type="Node2D"]
+z_index = 2
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mfiex")
+animation = &"grape"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+metadata/_edit_group_ = true

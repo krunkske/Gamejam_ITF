@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://t7dltt5pbluq"]
+
+[ext_resource type="Script" uid="uid://e0wbhdeid2n6" path="res://Scripts/Player.gd" id="1_1bdvb"]
+[ext_resource type="PackedScene" uid="uid://cwam0862ljvd8" path="res://Scenes/main_menu.tscn" id="2_6qj0g"]
+[ext_resource type="PackedScene" uid="uid://cvfxrwqc70hqd" path="res://Scenes/HUD.tscn" id="2_l8jmn"]
+[ext_resource type="PackedScene" uid="uid://56vvo3hmtinj" path="res://Scenes/gun.tscn" id="2_nj0x7"]
+[ext_resource type="Texture2D" uid="uid://f8lwksp83u4r" path="res://Assets/player/player.png" id="3_6fx75"]
+[ext_resource type="PackedScene" uid="uid://bsp6ixe0nduh7" path="res://Scenes/game_over.tscn" id="3_uxuvh"]
+[ext_resource type="PackedScene" uid="uid://bb5fuhtm2kfah" path="res://Scenes/scores.tscn" id="5_m4gqw"]
+[ext_resource type="PackedScene" uid="uid://ded082qtltdwu" path="res://Scenes/shop_ui.tscn" id="6_ff3is"]
+[ext_resource type="Texture2D" uid="uid://nnfdhy1chvh2" path="res://Assets/player/Smoke VFX C2.png" id="8_w5hl2"]
+[ext_resource type="Texture2D" uid="uid://ckfbqx44aluju" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="9_5bb7g"]
+[ext_resource type="PackedScene" uid="uid://dnjqhe1xm2jou" path="res://Scenes/pause.tscn" id="11_qd6pt"]
+[ext_resource type="PackedScene" uid="uid://cbqs774son3b7" path="res://Scenes/publish_score.tscn" id="12_e7jdr"]
+[ext_resource type="PackedScene" uid="uid://dim0l1m2hvxv2" path="res://Scenes/mobile_controls.tscn" id="13_niia4"]
+[ext_resource type="PackedScene" uid="uid://dl1qkp0d6pjsw" path="res://Scenes/credits.tscn" id="14_8wcob"]
+[ext_resource type="PackedScene" uid="uid://dppdre21mytqi" path="res://Scenes/skins.tscn" id="15_uviod"]
+[ext_resource type="PackedScene" uid="uid://2qswlupoc4o7" path="res://Scenes/warning.tscn" id="16_riow3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w87s"]
+radius = 16.0
+height = 86.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucxb8"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbqte"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwy6l"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(90, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi77t"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvij6"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amuag"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwyfl"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(300, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_801oe"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(330, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1mo8"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(210, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfskl"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(180, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woa5t"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(150, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5etce"]
+atlas = ExtResource("3_6fx75")
+region = Rect2(120, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxqkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucxb8")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbqte")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwy6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi77t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvij6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amuag")
+}],
+"loop": 1,
+"name": &"walkDown",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwyfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_801oe")
+}],
+"loop": 1,
+"name": &"walkSide",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1mo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfskl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woa5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5etce")
+}],
+"loop": 1,
+"name": &"walkUp",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4hi4"]
+radius = 18.0
+height = 86.0
+
+[node name="Player" type="CharacterBody2D" unique_id=142447334 groups=["player"]]
+z_index = 1
+collision_mask = 258
+motion_mode = 1
+script = ExtResource("1_1bdvb")
+
+[node name="mobile_controls" parent="." unique_id=1704354393 instance=ExtResource("13_niia4")]
+visible = false
+
+[node name="main_menu" parent="." unique_id=1757584970 instance=ExtResource("2_6qj0g")]
+
+[node name="game_over" parent="." unique_id=1715558568 instance=ExtResource("3_uxuvh")]
+
+[node name="highscores" parent="." unique_id=339273645 instance=ExtResource("5_m4gqw")]
+
+[node name="shopUI" parent="." unique_id=1301793905 instance=ExtResource("6_ff3is")]
+
+[node name="HUD" parent="." unique_id=664983485 instance=ExtResource("2_l8jmn")]
+
+[node name="dash_cooldown_timer" type="Timer" parent="." unique_id=135202153]
+wait_time = 5.0
+one_shot = true
+
+[node name="dash_duration_timer" type="Timer" parent="." unique_id=2027647795]
+wait_time = 0.5
+one_shot = true
+
+[node name="attack_cooldown_timer" type="Timer" parent="." unique_id=700293716]
+wait_time = 0.2
+one_shot = true
+
+[node name="damage_vunrabil_timer" type="Timer" parent="." unique_id=460876895]
+wait_time = 0.5
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1977053911]
+visible = false
+
+[node name="gun" parent="Node2D" unique_id=178175662 instance=ExtResource("2_nj0x7")]
+position = Vector2(75, 12)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1754247115]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=745088499]
+emitting = false
+texture = ExtResource("8_w5hl2")
+lifetime = 0.5
+one_shot = true
+randomness = 1.0
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+scale_amount_max = 3.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=680816328 groups=["player"]]
+collision_mask = 116
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=849232705 groups=["player"]]
+shape = SubResource("CapsuleShape2D_7w87s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1393310590]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uxqkn")
+animation = &"walkSide"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=30714228 groups=["player"]]
+shape = SubResource("CapsuleShape2D_g4hi4")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1324216494]
+energy = 0.2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_filter = 2
+texture = ExtResource("9_5bb7g")
+texture_scale = 7.0
+
+[node name="pause" parent="." unique_id=1835369320 instance=ExtResource("11_qd6pt")]
+
+[node name="publish_score" parent="." unique_id=903857789 instance=ExtResource("12_e7jdr")]
+
+[node name="credits" parent="." unique_id=1991266608 instance=ExtResource("14_8wcob")]
+
+[node name="skins" parent="." unique_id=1378123922 instance=ExtResource("15_uviod")]
+
+[node name="warning" parent="." unique_id=1534458829 instance=ExtResource("16_riow3")]
+visible = false
+
+[connection signal="timeout" from="dash_cooldown_timer" to="." method="_on_dash_cooldown_timer_timeout"]
+[connection signal="timeout" from="dash_duration_timer" to="." method="_on_dash_duration_timer_timeout"]
+[connection signal="timeout" from="attack_cooldown_timer" to="." method="_on_attack_cooldown_timer_timeout"]
+[connection signal="timeout" from="damage_vunrabil_timer" to="." method="_on_damage_vunrabil_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://ded082qtltdwu"]
+
+[ext_resource type="Theme" uid="uid://da58o1lo1s1vr" path="res://Assets/button_theme.tres" id="1_61xbc"]
+[ext_resource type="Script" path="res://Scripts/shop_ui.gd" id="1_fommt"]
+[ext_resource type="AudioStream" uid="uid://dvhekub3ifht7" path="res://Assets/sfx/MI_SFX 18.mp3" id="3_d3wt3"]
+[ext_resource type="AudioStream" uid="uid://brvhj0p8nka44" path="res://Assets/sfx/MI_SFX 09.mp3" id="4_n3ii1"]
+[ext_resource type="AudioStream" uid="uid://c2gt2hulbu4mf" path="res://Assets/sfx/Abstract1.mp3" id="5_srfop"]
+
+[node name="shopUI" type="CanvasLayer"]
+script = ExtResource("1_fommt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 603.0
+offset_bottom = 800.0
+theme = ExtResource("1_61xbc")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 728.0
+offset_bottom = 1006.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/PanelContainer"]
+layout_mode = 2
+color = Color(0.482353, 0.482353, 0.482353, 0.729412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Stats" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator3" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 3
+columns = 2
+
+[node name="speed" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "+30 Speed
+1000 coins"
+
+[node name="coin_range" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "+30 coin magnet
+1000 coins"
+
+[node name="dash_cooldown" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_61xbc")
+text = "-1 dash cooldown
+1500 coins"
+
+[node name="dash_duration" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_61xbc")
+text = "+0.1 dash duration
+1500 coins"
+
+[node name="max_health" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "+20 max health
+2500 coins"
+
+[node name="damage" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "+20% damage
+2500 coins"
+
+[node name="resistance" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "+10% resistance
+3000 coins"
+
+[node name="dog" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "dog compainion
+3000 coins"
+
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="close" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_61xbc")
+text = "close
+"
+
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator4" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("3_d3wt3")
+volume_db = -5.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("4_n3ii1")
+volume_db = -5.0
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_srfop")
+volume_db = 5.0
+
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/speed" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/coin_range" to="." method="_on_coin_range_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/dash_cooldown" to="." method="_on_dash_cooldown_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/dash_duration" to="." method="_on_dash_duration_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/max_health" to="." method="_on_max_health_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/damage" to="." method="_on_damage_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/resistance" to="." method="_on_resistance_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/dog" to="." method="_on_dog_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/close" to="." method="_on_close_pressed"]

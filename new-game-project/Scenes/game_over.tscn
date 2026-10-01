@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsp6ixe0nduh7"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_d8am8"]
+[ext_resource type="Theme" uid="uid://da58o1lo1s1vr" path="res://Assets/button_theme.tres" id="2_oy81l"]
+[ext_resource type="Texture2D" uid="uid://fnrxd0rtbj76" path="res://Assets/GUI/healthbar.png" id="3_as4fl"]
+[ext_resource type="AudioStream" uid="uid://c2gt2hulbu4mf" path="res://Assets/sfx/Abstract1.mp3" id="3_os2ye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lj36"]
+atlas = ExtResource("3_as4fl")
+region = Rect2(3, 6, 42, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgnlt"]
+atlas = ExtResource("3_as4fl")
+region = Rect2(51, 6, 42, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kbs1l"]
+font_size = 40
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="game_over" type="CanvasLayer"]
+script = ExtResource("1_d8am8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 729.0
+offset_bottom = 1280.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.353224
+anchor_top = 0.497266
+anchor_right = 0.641289
+anchor_bottom = 0.516797
+offset_right = -168.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_under = SubResource("AtlasTexture_0lj36")
+texture_progress = SubResource("AtlasTexture_dgnlt")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 721.0
+offset_bottom = 1003.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = SubResource("LabelSettings_kbs1l")
+
+[node name="Retry" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oy81l")
+text = "Retry"
+
+[node name="Scores" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oy81l")
+text = "High scores
+"
+
+[node name="publish_score" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oy81l")
+text = "Publish score"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="score" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_oy81l")
+text = "Score: 0"
+
+[node name="totalMoney" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_oy81l")
+text = "total money: 0"
+
+[node name="level" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oy81l")
+text = "level: 1"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("3_os2ye")
+volume_db = 10.0
+
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/Scores" to="." method="_on_scores_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/publish_score" to="." method="_on_publish_score_pressed"]

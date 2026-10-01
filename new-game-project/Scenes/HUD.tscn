@@ -1,0 +1,151 @@
+[gd_scene load_steps=14 format=3 uid="uid://cvfxrwqc70hqd"]
+
+[ext_resource type="Texture2D" uid="uid://fnrxd0rtbj76" path="res://Assets/GUI/healthbar.png" id="1_6kqmu"]
+[ext_resource type="Texture2D" uid="uid://deo6wmby10ag7" path="res://Assets/GUI/dashbar.png" id="2_k7c4n"]
+[ext_resource type="Theme" uid="uid://da58o1lo1s1vr" path="res://Assets/button_theme.tres" id="3_io7i0"]
+[ext_resource type="Texture2D" uid="uid://m67fjq3psyai" path="res://Assets/collectables/gold_coin.png" id="4_6mgoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5dik"]
+atlas = ExtResource("1_6kqmu")
+region = Rect2(3, 6, 42, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y4pa"]
+atlas = ExtResource("1_6kqmu")
+region = Rect2(51, 6, 42, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpy6o"]
+atlas = ExtResource("2_k7c4n")
+region = Rect2(0, 5, 48, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr2kg"]
+atlas = ExtResource("2_k7c4n")
+region = Rect2(48, 5, 48, 6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tv1u0"]
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a18xg"]
+font_size = 28
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pk6g1"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_8p1cy"]
+font_size = 45
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxihy"]
+atlas = ExtResource("4_6mgoh")
+region = Rect2(1, 0, 14, 14)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_right = 361.0
+offset_bottom = 94.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.5
+offset_top = 1.0
+offset_right = -83.5
+offset_bottom = 6.0
+grow_horizontal = 2
+scale = Vector2(6, 6)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+tooltip_text = "
+"
+texture_under = SubResource("AtlasTexture_o5dik")
+texture_progress = SubResource("AtlasTexture_2y4pa")
+
+[node name="dashBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 11.0
+scale = Vector2(3, 3)
+texture_under = SubResource("AtlasTexture_dpy6o")
+texture_progress = SubResource("AtlasTexture_fr2kg")
+
+[node name="score" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -59.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_tv1u0")
+
+[node name="hp" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.032
+anchor_right = 0.5
+anchor_bottom = 0.032
+offset_left = -18.5
+offset_top = -0.00800014
+offset_right = 18.5
+offset_bottom = 25.992
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "100"
+label_settings = SubResource("LabelSettings_a18xg")
+
+[node name="dash" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 118.0
+offset_bottom = 38.0
+text = "Dash Ready"
+label_settings = SubResource("LabelSettings_pk6g1")
+
+[node name="money" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_bottom = 47.0
+grow_horizontal = 0
+theme = ExtResource("3_io7i0")
+theme_override_font_sizes/font_size = 25
+text = "0
+"
+label_settings = SubResource("LabelSettings_8p1cy")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -168.0
+offset_right = -128.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_dxihy")

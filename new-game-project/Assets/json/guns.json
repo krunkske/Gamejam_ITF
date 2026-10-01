@@ -1,0 +1,28 @@
+{
+	"banana":{
+		"weapon_type": "banana",
+		"bullet_speed":800,
+		"fire_rate":0.45,
+		"damage":40,
+		"pellets":1,
+		"texture":"banana"
+		
+	},
+	"grape":{
+		"weapon_type": "grape",
+		"bullet_speed":800,
+		"fire_rate":0.70,
+		"damage":15,
+		"pellets":6,
+		"spread":10,
+		"texture":"grape"
+	},
+	"apple":{
+		"weapon_type": "apple",
+		"bullet_speed":800,
+		"fire_rate":0.25,
+		"damage":22.5,
+		"pellets":0,
+		"texture":"apple"
+	}
+}

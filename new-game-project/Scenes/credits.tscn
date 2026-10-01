@@ -1,0 +1,176 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl1qkp0d6pjsw"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_kelvq"]
+[ext_resource type="Theme" uid="uid://da58o1lo1s1vr" path="res://Assets/button_theme.tres" id="2_jcwmi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bafnb"]
+font_size = 38
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5pwr"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3ibh"]
+font_size = 38
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri0oc"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_oswds"]
+font_size = 38
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_025gu"]
+font_size = 38
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="credits" type="CanvasLayer"]
+script = ExtResource("1_kelvq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+self_modulate = Color(0.576471, 0.745098, 0.388235, 0.733333)
+layout_mode = 0
+offset_right = 726.0
+offset_bottom = 1005.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/PanelContainer"]
+layout_mode = 2
+color = Color(0.576471, 0.745098, 0.388235, 0.733333)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/ScrollContainer"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="credits" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jcwmi")
+text = "credits"
+label_settings = SubResource("LabelSettings_bafnb")
+horizontal_alignment = 1
+
+[node name="5IC" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jcwmi")
+text = "5IC
+cas
+xander
+dante
+stefana
+bartu
+"
+label_settings = SubResource("LabelSettings_d5pwr")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="assets" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jcwmi")
+text = "assets"
+label_settings = SubResource("LabelSettings_x3ibh")
+horizontal_alignment = 1
+
+[node name="assetcredits" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jcwmi")
+text = "Nathan Gibson
+@nyk_nck
+Dream Mix
+greatdocbrown
+chat.openai.com"
+label_settings = SubResource("LabelSettings_ri0oc")
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="issues" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jcwmi")
+text = "issues, bugs en andere problemen"
+label_settings = SubResource("LabelSettings_oswds")
+horizontal_alignment = 1
+
+[node name="email" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "heb je problemen, bugs tegengkomem of suggesties? stuur dan een mail naar devs@zombiechaos.be"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="back" type="Button" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_jcwmi")
+theme_override_font_sizes/font_size = 48
+text = "back"
+
+[node name="HSeparator4" type="HSeparator" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="backstory" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "backstory"
+label_settings = SubResource("LabelSettings_025gu")
+horizontal_alignment = 1
+
+[node name="story" type="Label" parent="Control/PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_jcwmi")
+theme_override_font_sizes/font_size = 32
+text = "In een niet al te verre toekomst was de wereld getuige van een catastrofale gebeurtenis die bekend werd als de \"Zombie Apocalypse\". Een experimenteel virus, ooit per ongeluk ontwikkeld in een practicum verspreidde zich als een lopend vuurtje over de hele wereld, mensen veranderend in bloeddorstige zombies zonder enige vorm van menselijkheid.
+
+Overlevenden bundelden hun krachten en vormden kleine gemeenschappen in afgelegen gebieden, vechtend voor hun bestaan tegen de ondoden die nu heersten over de aarde. In het midden van deze apocalyptische chaos ontstond een nieuwe held - een onwaarschijnlijke krijger genaamd Sam, een voormalige fruitboer die zijn familiebedrijf runde voordat de wereld werd overspoeld door de zombies. Vastbesloten om de wereld te redden en zijn geliefden te wreken die hij verloor aan de ondoden, greep Sam naar zijn enige wapen: fruit.
+
+Gewapend met een assortiment van sappige projectielen begaf Sam zich op een epische queeste door de verlaten school, vechtend tegen golven van hongerige zombies. Zijn missie was duidelijk: overleven en de wereld redden door de infectie te stoppen bij de bron.
+
+Met elke zombie die hij versloeg, kwam Sam dichter bij de waarheid achter de oorsprong van het virus en degenen die er verantwoordelijk voor waren. Onderweg ontmoette hij zijn trouwe kompaan die zijn zaak om de wereld te redden steunden, samen met hen streefde hij naar gerechtigheid.
+
+In \"ZombieChaos: Zombie Apocalypse\" draait alles om overleving, vindingrijkheid en het oogsten van de zoete, sappige gerechtigheid uit de chaos van de apocalyps. De vraag is: zal Sam slagen in zijn missie om de wereld te redden of zal hij worden opgeslokt door de duisternis van de ondoden? De toekomst van de mensheid rust in zijn handen en zijn fruitige arsenaal.
+
+Ontdek het spel nu op https://www.zombiechaos.be.
+
+Heb je net een epische run gehad waarbij je golven zombies hebt verslagen met je sappige projectielen? Of misschien heb je een record aantal zombies verslagen met niets dan een paar goed gemikte bananen?
+
+Laat ze zien hoe ver je bent gekomen in je strijd tegen de Zombie Apocalypse. Voor 0.50 EUR koop je een token waarmee je jouw score kan delen. Hiervoor kan je terecht bij de leerlingen van BS5IC.
+
+Dus waar wacht je nog op? Gooi die appels, bananen en druiven, en laat de wereld zien dat jij de Zombie Chaos kan verslaan.
+
+Keep on throwing, and keep on sharing!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Control/PanelContainer/ScrollContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
