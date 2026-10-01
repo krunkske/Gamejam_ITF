@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bcncthlvawax2" path="res://Scenes/Player/idle_02.png" id="7_0u84n"]
 [ext_resource type="Texture2D" uid="uid://640xtegqlq6h" path="res://Scenes/Player/idle_03.png" id="8_esmjy"]
 [ext_resource type="Texture2D" uid="uid://dln36dueajt7d" path="res://Scenes/Player/idle_04.png" id="9_6tu5v"]
+[ext_resource type="Texture2D" uid="uid://cmnnrqcp2d4w8" path="res://Scenes/Player/game_over.png" id="14_0u84n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xww6"]
 animations = [{
@@ -97,13 +98,18 @@ animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="anination" unique_id=1515920354]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="game_over" type="Sprite2D" parent="anination/Camera2D" unique_id=2015227255]
+visible = false
+scale = Vector2(1.3771564, 1.3642857)
+texture = ExtResource("14_0u84n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=475023661]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_player")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=117032600]
 
-[node name="Heart" type="Label" parent="HUD"]
+[node name="Heart" type="Label" parent="HUD" unique_id=556663142]
 offset_left = 20.0
 offset_top = 16.0
 offset_right = 48.0
@@ -112,7 +118,7 @@ theme_override_colors/font_color = Color(0.95, 0.08, 0.12, 1)
 theme_override_font_sizes/font_size = 24
 text = "♥"
 
-[node name="HealthBar" type="ProgressBar" parent="HUD"]
+[node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=1208132054]
 offset_left = 54.0
 offset_top = 22.0
 offset_right = 254.0
@@ -121,4 +127,3 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxFlat_health_background")
 theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
-show_percentage = true

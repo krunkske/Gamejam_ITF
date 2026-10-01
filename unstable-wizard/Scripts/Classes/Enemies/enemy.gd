@@ -33,7 +33,6 @@ func _ready():
 		speed = randf_range(100, 120)
 	elif enemy_name == "goblin":
 		$AnimatedSprite2D.play("goblin_walk")
-		$AnimatedSprite2D.scale = Vector2(0.25, 0.25)
 		health = 100
 		damage = 15
 		speed = randf_range(130, 150)

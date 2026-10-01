@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const FIREBALL_SCENE = preload("res://Scenes/Spells/fireball.tscn")
-const WIND_SCENE = preload("res://Scenes/Spells/wind.tscn")
+const WIND_SCENE = preload("res://Scenes/Spells/Wind.tscn")
 
 @export var speed: float = 250.0
 @export var max_health: int = 100
@@ -31,8 +31,8 @@ func _physics_process(delta: float) -> void:
 	damage_cooldown_remaining = maxf(damage_cooldown_remaining - delta, 0.0)
 
 	var input_dir := Vector2(
-		Input.get_axis("ui_left", "ui_right"),
-		Input.get_axis("ui_up", "ui_down")
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
 	)
 
 	# Beweging
@@ -78,6 +78,7 @@ func take_damage(amount: int) -> void:
 		velocity = Vector2.ZERO
 		animation.play("idle")
 		set_process_input(false)
+		$anination/Camera2D/game_over.show()
 
 
 func _input(event: InputEvent) -> void:

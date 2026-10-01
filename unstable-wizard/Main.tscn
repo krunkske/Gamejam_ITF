@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6qwu0prll2lr" path="res://Scenes/Player/Player.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://dimka03axxivm" path="res://Scenes/Levels/level.tscn" id="1_uu6xs"]
-[ext_resource type="PackedScene" uid="uid://ckupda38yah42" path="res://Scenes/Enemy/Enemy.tscn" id="3_r0du0"]
+[ext_resource type="AudioStream" uid="uid://djb286chnbsjj" path="res://Aylex - Glorious (freetouse.com).mp3" id="3_r0du0"]
 
 [node name="main" type="Node2D" unique_id=1480216624]
 
@@ -11,4 +11,7 @@
 [node name="player" parent="." unique_id=114388994 instance=ExtResource("1_glv2v")]
 position = Vector2(619, 318)
 
-[node name="CharacterBody2D" parent="." unique_id=338898116 instance=ExtResource("3_r0du0")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1337952014]
+stream = ExtResource("3_r0du0")
+autoplay = true
+parameters/looping = true
