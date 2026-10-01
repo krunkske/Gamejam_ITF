@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dimka03axxivm"]
+
+[ext_resource type="Script" uid="uid://dw6cc8bs52v30" path="res://Scripts/Classes/Levels/Level.gd" id="1_u52ul"]
+
+[node name="Level" type="TileMapLayer" unique_id=1688642627]
+script = ExtResource("1_u52ul")

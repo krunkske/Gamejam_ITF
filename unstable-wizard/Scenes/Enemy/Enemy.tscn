@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ckupda38yah42"]
+
+[ext_resource type="Script" uid="uid://dp5tdi8qmmkmb" path="res://Scripts/Classes/Enemies/enemy.gd" id="1_m1htj"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=338898116]
+script = ExtResource("1_m1htj")
