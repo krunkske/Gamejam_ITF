@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = Autoload.player
+var player: Node2D
 @export var enemy_name :String
 var player_pos
 
@@ -22,6 +22,8 @@ var movement_target_position: Vector2
 
 
 func _ready():
+	player = get_tree().root.get_node_or_null("main/player") as Node2D
+
 	if enemy_name == "golem":
 		$AnimatedSprite2D.play("golem_walk")
 		health = 200
@@ -45,6 +47,9 @@ func _ready():
 	prev_speed = speed
 
 func _physics_process(delta):
+	if not is_instance_valid(player):
+		return
+
 	if not dead:
 		speed = prev_speed
 	
