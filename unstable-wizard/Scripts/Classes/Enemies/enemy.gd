@@ -26,7 +26,7 @@ func _ready():
 
 	if enemy_name == "golem":
 		$AnimatedSprite2D.play("golem_walk")
-		health = 200
+		health = 150
 		damage = 20
 		speed = randf_range(100, 120)
 	elif enemy_name == "goblin":
@@ -34,12 +34,12 @@ func _ready():
 		$AnimatedSprite2D.scale = Vector2(0.25, 0.25)
 		health = 100
 		damage = 15
-		speed = randf_range(150, 180)
+		speed = randf_range(130, 150)
 	elif enemy_name == "knight":
 		$AnimatedSprite2D.play("knight_walk")
 		health = 50
 		damage = 10
-		speed = randf_range(230, 260)
+		speed = randf_range(170, 200)
 	
 	$healthBar.set_max(health)
 	$healthBar.value = health
@@ -107,6 +107,7 @@ func damage_taken(Damage):
 		#$Area2D.set_collision_layer_value(4, false)
 		$healthBar.set_visible(false)
 		$AnimatedSprite2D.play("death")
+		$Timer.start()
 		
 	#flicker the enemy sprite
 	for i in 3:
@@ -132,3 +133,7 @@ func _on_animated_sprite_2d_animation_finished():
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("player"):
 		in_player = false
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
