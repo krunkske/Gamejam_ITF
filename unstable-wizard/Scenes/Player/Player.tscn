@@ -1,16 +1,53 @@
 [gd_scene format=3 uid="uid://6qwu0prll2lr"]
 
 [ext_resource type="Script" uid="uid://3hxjf68127o5" path="res://Scripts/Classes/Player/Player.gd" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://xfvyrofpuxgc" path="res://Scenes/Player/attack_01.png" id="2_825xp"]
 [ext_resource type="Texture2D" uid="uid://bnea68wlnowlj" path="res://Scenes/Player/walk_01.png" id="2_jmcll"]
 [ext_resource type="Texture2D" uid="uid://bc2p5t8i5ke8k" path="res://Scenes/Player/walk_02.png" id="3_4wape"]
+[ext_resource type="Texture2D" uid="uid://b2rurlv4mp8ef" path="res://Scenes/Player/attack_02.png" id="3_ji083"]
+[ext_resource type="Texture2D" uid="uid://b3s0k1wppkxxf" path="res://Scenes/Player/attack_03.png" id="4_0kmp4"]
 [ext_resource type="Texture2D" uid="uid://bp8bxe1tbp2o8" path="res://Scenes/Player/walk_03.png" id="4_t26db"]
 [ext_resource type="Texture2D" uid="uid://b2ssv3pgl86uy" path="res://Scenes/Player/walk_04.png" id="5_fk5o5"]
+[ext_resource type="Texture2D" uid="uid://cf0la6ibh50n0" path="res://Scenes/Player/attack_04.png" id="5_i5acl"]
+[ext_resource type="Texture2D" uid="uid://n5ryk0c18yg4" path="res://Scenes/Player/idle_01.png" id="6_epg6k"]
+[ext_resource type="Texture2D" uid="uid://bcncthlvawax2" path="res://Scenes/Player/idle_02.png" id="7_0u84n"]
+[ext_resource type="Texture2D" uid="uid://640xtegqlq6h" path="res://Scenes/Player/idle_03.png" id="8_esmjy"]
+[ext_resource type="Texture2D" uid="uid://dln36dueajt7d" path="res://Scenes/Player/idle_04.png" id="9_6tu5v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xww6"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_825xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ji083")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0kmp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i5acl")
+}],
 "loop": 1,
-"name": &"new_animation",
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_epg6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0u84n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_esmjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6tu5v")
+}],
+"loop": 1,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -36,4 +73,5 @@ script = ExtResource("1_rpqav")
 
 [node name="anination" type="AnimatedSprite2D" parent="." unique_id=930029314]
 sprite_frames = SubResource("SpriteFrames_0xww6")
-animation = &"walk"
+animation = &"idle"
+frame_progress = 0.5362302
