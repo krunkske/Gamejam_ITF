@@ -3,6 +3,8 @@ class_name Player
 
 const FIREBALL_SCENE = preload("res://Scenes/Spells/fireball.tscn")
 const WIND_SCENE = preload("res://Scenes/Spells/Wind.tscn")
+const LIGHTNING_SCENE = preload("res://Scenes/Spells/lightning.tscn")
+
 
 @export var speed: float = 250.0
 @export var max_health: int = 100
@@ -116,3 +118,9 @@ func shoot_wind() -> void:
 	get_tree().current_scene.add_child(wind)
 	wind.global_position = global_position
 	wind.direction = global_position.direction_to(get_global_mouse_position())
+
+func shoot_lightning() -> void:
+	var lightning = LIGHTNING_SCENE.instantiate()
+	get_tree().current_scene.add_child(lightning)
+	lightning.global_position = global_position
+	lightning.direction = global_position.direction_to(get_global_mouse_position()).normalized()

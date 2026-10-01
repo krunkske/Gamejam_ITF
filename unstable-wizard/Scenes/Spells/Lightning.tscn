@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c74pj0ub2kswv"]
+
+[ext_resource type="Texture2D" uid="uid://c8ljjgn5tkbed" path="res://Scenes/Spells/Lightning.png" id="1_5jgpr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbusv"]
+atlas = ExtResource("1_5jgpr")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_timx4"]
+atlas = ExtResource("1_5jgpr")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwq6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbusv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_timx4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=719819009]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1486451584]
+sprite_frames = SubResource("SpriteFrames_qwq6p")
+frame_progress = 0.97468406
