@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://6qjvwbuxgb1g"]
 
-[node name="Explosion" type="Node2D" unique_id=745462260]
+[ext_resource type="Script" path="res://Scenes/Spells/explosion.gd" id="1_explosion"]
+
+[node name="Explosion" type="AnimatedSprite2D" unique_id=745462260]
+script = ExtResource("1_explosion")
