@@ -15,6 +15,7 @@ var knockback_active = false
 var knockback_force = 500
 var knockback_direction = Vector2()
 var knockback = Vector2()
+var wind_pull_velocity := Vector2.ZERO
 
 var movement_target_position: Vector2
 
@@ -22,6 +23,7 @@ var movement_target_position: Vector2
 
 
 func _ready():
+	add_to_group("enemy")
 	player = get_tree().root.get_node_or_null("main/player") as Node2D
 
 	if enemy_name == "golem":
@@ -74,7 +76,8 @@ func _physics_process(delta):
 		knockback_active = false
 		knockback = Vector2.ZERO
 	
-	velocity = velocity.lerp(direction*speed, 10 * delta) + knockback
+	wind_pull_velocity = wind_pull_velocity.move_toward(Vector2.ZERO, 300.0 * delta)
+	velocity = velocity.lerp(direction*speed, 10 * delta) + knockback + wind_pull_velocity
 	move_and_slide()
 	for collision_index in get_slide_collision_count():
 		if get_slide_collision(collision_index).get_collider() == player:
@@ -134,6 +137,11 @@ func apply_knockback(force: float, source: Node2D) -> void:
 	if knockback_direction == Vector2.ZERO:
 		knockback_direction = Vector2.RIGHT
 	knockback_active = true
+
+
+func apply_wind_pull(force: Vector2) -> void:
+	if not dead:
+		wind_pull_velocity = (wind_pull_velocity + force).limit_length(500.0)
 
 
 func _on_animated_sprite_2d_animation_finished():
