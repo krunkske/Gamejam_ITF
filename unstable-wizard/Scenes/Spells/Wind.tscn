@@ -19,11 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ds3hb"]
-<<<<<<< Updated upstream
-radius = 12.0
-=======
 radius = 30.066593
->>>>>>> Stashed changes
 
 [node name="Wind" type="Area2D" unique_id=1541043639]
 collision_layer = 8
