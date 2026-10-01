@@ -101,11 +101,13 @@ func attack() -> void:
 	animation.play("attack")
 	
 	# Randomly choose between fireball and wind
-	var spell_choice = randi() % 2
+	var spell_choice = randi_range(0, 2)
 	if spell_choice == 0:
 		shoot_fireball()
-	else:
+	elif spell_choice == 1:
 		shoot_wind()
+	else:
+		shoot_lightning()
 
 	await animation.animation_finished
 
@@ -129,4 +131,4 @@ func shoot_lightning() -> void:
 	var lightning = LIGHTNING_SCENE.instantiate()
 	get_tree().current_scene.add_child(lightning)
 	lightning.global_position = global_position
-	lightning.direction = global_position.direction_to(get_global_mouse_position()).normalized()
+	lightning.direction = global_position.direction_to(get_global_mouse_position())
