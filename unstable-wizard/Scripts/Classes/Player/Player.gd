@@ -19,8 +19,15 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("ui_up", "ui_down")
 	)
 
+	# Beweging
 	velocity = input_dir.normalized() * speed
 	move_and_slide()
+
+	# Karakter omdraaien
+	if input_dir.x < 0:
+		animation.flip_h = true
+	elif input_dir.x > 0:
+		animation.flip_h = false
 
 	# Tijdens attack niets veranderen
 	if attacking:
