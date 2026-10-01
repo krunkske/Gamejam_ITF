@@ -17,6 +17,6 @@ func _ready() -> void:
 
 	sprite_frames = frames
 	animation = "explosion"
-	scale = Vector2.ONE * 1.5
+	scale = Vector2.ONE * 3
 	animation_finished.connect(queue_free)
 	play()
