@@ -3,7 +3,7 @@ class_name Player
 
 const FIREBALL_SCENE = preload("res://Scenes/Spells/fireball.tscn")
 const WIND_SCENE = preload("res://Scenes/Spells/Wind.tscn")
-const LIGHTNING_SCENE = preload("res://Scenes/Spells/lightning.tscn")
+const LIGHTNING_SCENE = preload("res://Scenes/Spells/Lightning.tscn")
 
 
 @export var speed: float = 250.0
