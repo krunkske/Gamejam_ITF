@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://6qwu0prll2lr" path="res://Scenes/Player/Player.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://dimka03axxivm" path="res://Scenes/Levels/level.tscn" id="1_uu6xs"]
-[ext_resource type="PackedScene" uid="uid://ckupda38yah42" path="res://Scenes/Enemy/Enemy.tscn" id="3_r0du0"]
 
 [node name="main" type="Node2D" unique_id=1480216624]
+position = Vector2(1, 0)
 
 [node name="Level" parent="." unique_id=1135496085 instance=ExtResource("1_uu6xs")]
 
 [node name="player" parent="." unique_id=114388994 instance=ExtResource("1_glv2v")]
 position = Vector2(619, 318)
-
-[node name="CharacterBody2D" parent="." unique_id=338898116 instance=ExtResource("3_r0du0")]
