@@ -1,9 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
+const FIREBALL_SCENE = preload("res://Scenes/Spells/fireball.tscn")
+
 @export var speed: float = 250.0
 
 var attacking: bool = false
+var active_fireball: Area2D
 
 @onready var animation: AnimatedSprite2D = $anination
 
@@ -54,7 +57,19 @@ func _input(event: InputEvent) -> void:
 func attack() -> void:
 	attacking = true
 	animation.play("attack")
+	shoot_fireball()
 
 	await animation.animation_finished
 
 	attacking = false
+
+
+func shoot_fireball() -> void:
+	if is_instance_valid(active_fireball):
+		return
+
+	var fireball = FIREBALL_SCENE.instantiate()
+	get_tree().current_scene.add_child(fireball)
+	fireball.global_position = global_position
+	fireball.direction = global_position.direction_to(get_global_mouse_position())
+	active_fireball = fireball
