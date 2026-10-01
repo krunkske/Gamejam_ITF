@@ -73,7 +73,6 @@ script = ExtResource("1_rpqav")
 
 [node name="anination" type="AnimatedSprite2D" parent="." unique_id=930029314]
 sprite_frames = SubResource("SpriteFrames_0xww6")
-animation = &"idle"
-frame_progress = 0.5362302
+animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="anination" unique_id=1515920354]
