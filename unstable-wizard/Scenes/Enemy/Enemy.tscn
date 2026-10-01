@@ -188,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pa44q")
 }],
-"loop": 0,
+"loop": 2,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -327,16 +327,18 @@ script = ExtResource("1_m1htj")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=186954524]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840137289]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_i1u57")
-animation = &"death"
+animation = &"goblin_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1785950812]
-position = Vector2(6, 78)
 shape = SubResource("CapsuleShape2D_3l8kd")
 
 [node name="healthBar" type="ProgressBar" parent="." unique_id=159419109]
-offset_left = -32.0
-offset_top = -80.0
-offset_right = 36.0
-offset_bottom = -53.0
+offset_left = -20.0
+offset_top = -168.0
+offset_right = 48.0
+offset_bottom = -141.0
 show_percentage = false
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

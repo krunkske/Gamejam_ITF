@@ -29,13 +29,12 @@ func _ready():
 		speed = randf_range(100, 120)
 	elif enemy_name == "goblin":
 		$AnimatedSprite2D.play("goblin_walk")
-		$AnimatedSprite2D.scale = 0.25
+		$AnimatedSprite2D.scale = Vector2(0.25, 0.25)
 		health = 100
 		damage = 15
 		speed = randf_range(150, 180)
 	elif enemy_name == "knight":
 		$AnimatedSprite2D.play("knight_walk")
-		$AnimatedSprite2D.scale = 1
 		health = 50
 		damage = 10
 		speed = randf_range(230, 260)
@@ -94,13 +93,13 @@ func damage_taken(Damage):
 		dead = true
 		speed = 0
 		#disable all colission and play death animation
-		self.set_collision_layer_value(3, false)
+		self.set_collision_layer_value(1, false)
 		self.set_collision_mask_value(2, false)
 		self.set_collision_mask_value(4, false)
-		$Area2D.set_collision_layer_value(1, false)
-		$Area2D.set_collision_layer_value(2, false)
-		$Area2D.set_collision_layer_value(3, false)
-		$Area2D.set_collision_layer_value(4, false)
+		#$Area2D.set_collision_layer_value(1, false)
+		#$Area2D.set_collision_layer_value(2, false)
+		#$Area2D.set_collision_layer_value(3, false)
+		#$Area2D.set_collision_layer_value(4, false)
 		$healthBar.set_visible(false)
 		$AnimatedSprite2D.play("death")
 		
@@ -121,8 +120,7 @@ func apply_knockback(force, Player):
 		knockback = knockback_direction.normalized() * knockback_force
 		knockback_active = true
 
-#when the death animation finishes delete the enemy
-# TODO rn it will delete itself after any animation finished. fix that.
+
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
 

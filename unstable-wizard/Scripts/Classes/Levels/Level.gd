@@ -2,17 +2,6 @@ extends Node2D
 
 const enemyPath = preload("res://Scenes/Enemy/Enemy.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-
 func _on_spawn_enemy_timeout() -> void:
 	spawn_enemy()
 
@@ -40,14 +29,17 @@ func spawn_enemy():
 		var random_y = rng.randi_range(-10,10)
 		enemy.position = spawn_pos + Vector2(random_x, random_y)
 		enemy.enemy_name = enemy_name
+		print("spawned enemy at" + str(enemy.position))
 		add_child(enemy)
+	increase_difficulty()
+	
 	$spawnEnemy.start()
 
 func random_spawn_pos() -> Vector2:
 	#create new rng and get the players pos
 	var rng = RandomNumberGenerator.new()
 	#get all points
-	var points = get_tree().get_nodes_in_group("SpawnPoints")
+	var points = get_tree().get_nodes_in_group("spawnpoints")
 	var pointNr = rng.randi_range(0, len(points) - 1)
 	var pointPos = points[pointNr].global_position
 	
@@ -56,3 +48,9 @@ func random_spawn_pos() -> Vector2:
 		return pointPos #* 1.75
 	else:
 		return random_spawn_pos()
+
+
+func increase_difficulty():
+	var time = $spawnEnemy.wait_time
+	if time >= 1:
+		$spawnEnemy.set_wait_time(time - 0.01)
