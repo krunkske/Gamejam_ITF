@@ -14,3 +14,9 @@ script = ExtResource("1_u52ul")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=29937743]
 navigation_polygon = SubResource("NavigationPolygon_g2qug")
+
+[node name="spawnEnemy" type="Timer" parent="." unique_id=681684180]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="spawnEnemy" to="." method="_on_spawn_enemy_timeout"]

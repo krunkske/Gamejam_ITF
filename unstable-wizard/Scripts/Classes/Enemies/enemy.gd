@@ -22,24 +22,26 @@ var movement_target_position: Vector2
 
 
 func _ready():
-	if enemy_name == "small":
-		$AnimatedSprite2D.play("walk_1")
-		health = 100 
+	if enemy_name == "golem":
+		$AnimatedSprite2D.play("golem_walk")
+		health = 200
 		damage = 20
-		speed = randf_range(150, 180)
-	elif enemy_name == "medium":
-		$AnimatedSprite2D.play("walk_2")
+		speed = randf_range(100, 120)
+	elif enemy_name == "goblin":
+		$AnimatedSprite2D.play("goblin_walk")
+		$AnimatedSprite2D.scale = 0.25
 		health = 100
 		damage = 15
 		speed = randf_range(150, 180)
-	elif enemy_name == "large":
-		$AnimatedSprite2D.play("walk_3")
+	elif enemy_name == "knight":
+		$AnimatedSprite2D.play("knight_walk")
+		$AnimatedSprite2D.scale = 1
 		health = 50
 		damage = 10
 		speed = randf_range(230, 260)
 	
-	#$healthBar.set_max(health)
-	#$healthBar.value = health
+	$healthBar.set_max(health)
+	$healthBar.value = health
 	
 	prev_speed = speed
 
@@ -72,9 +74,9 @@ func _physics_process(delta):
 	
 	#flip the texture so were facing the player
 	if position.x > player_pos.x:
-		$AnimatedSprite2D.flip_h = false
-	elif position.x < player_pos.x:
 		$AnimatedSprite2D.flip_h = true
+	elif position.x < player_pos.x:
+		$AnimatedSprite2D.flip_h = false
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("bullet") and not dead:
@@ -100,27 +102,7 @@ func damage_taken(Damage):
 		$Area2D.set_collision_layer_value(3, false)
 		$Area2D.set_collision_layer_value(4, false)
 		$healthBar.set_visible(false)
-		if enemy_name == "meduim_ksander":
-			$AnimatedSprite2D.play("death_1")
-		elif enemy_name == "medium_stef":
-			$AnimatedSprite2D.play("death_2")
-		elif enemy_name == "speedy_bart":
-			$AnimatedSprite2D.play("death_3")
-		elif enemy_name == "big_dante":
-			$AnimatedSprite2D.play("death_4")
-		else:
-			$AnimatedSprite2D.play("death_1")
-		
-		#random chance of heart spawning
-		var rng = RandomNumberGenerator.new()
-		var chance = rng.randi_range(0,50)
-		if chance == 0:
-			pass
-		#elif chance >= 10:
-			#var coin = coinPath.instantiate()
-			#coin.global_position = global_position
-			#coin.value = 100
-			#call_deferred("add_sibling", coin)
+		$AnimatedSprite2D.play("death")
 		
 	#flicker the enemy sprite
 	for i in 3:
@@ -142,8 +124,7 @@ func apply_knockback(force, Player):
 #when the death animation finishes delete the enemy
 # TODO rn it will delete itself after any animation finished. fix that.
 func _on_animated_sprite_2d_animation_finished():
-	if $AnimatedSprite2D.get_animation() == "death_1" or $AnimatedSprite2D.get_animation() == "death_2" or $AnimatedSprite2D.get_animation() == "death_3" or $AnimatedSprite2D.get_animation() == "death_4":
-		queue_free()
+	queue_free()
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("player"):
