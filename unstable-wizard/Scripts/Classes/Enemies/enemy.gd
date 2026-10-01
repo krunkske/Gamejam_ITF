@@ -49,26 +49,30 @@ func _ready():
 func _physics_process(delta):
 	if not is_instance_valid(player):
 		return
+	if dead:
+		velocity = Vector2.ZERO
+		return
 
-	if not dead:
-		speed = prev_speed
+	speed = prev_speed
 	
 	if in_player:
 		apply_knockback(250, player)
 	
 	#get the players pos and navigate towards it
-	var direction = Vector3()
+	var direction = Vector2()
 	player_pos = player.global_position
 	nav.target_position = player_pos
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
 	#knockback
-	knockback_force -= 50
+	if knockback_active:
+		knockback_force = move_toward(knockback_force, 0.0, 900.0 * delta)
+		knockback = knockback_direction * knockback_force
 	if knockback_force <= 0:
 		knockback_force = 0
 		knockback_active = false
-	knockback = knockback_direction * knockback_force
+		knockback = Vector2.ZERO
 	
 	velocity = velocity.lerp(direction*speed, 10 * delta) + knockback
 	move_and_slide()
@@ -98,9 +102,10 @@ func damage_taken(Damage):
 		dead = true
 		speed = 0
 		#disable all colission and play death animation
-		self.set_collision_layer_value(1, false)
+		self.set_collision_layer_value(3, false)
+		self.set_collision_mask_value(1, false)
 		self.set_collision_mask_value(2, false)
-		self.set_collision_mask_value(4, false)
+		self.set_collision_mask_value(3, false)
 		#$Area2D.set_collision_layer_value(1, false)
 		#$Area2D.set_collision_layer_value(2, false)
 		#$Area2D.set_collision_layer_value(3, false)
@@ -115,15 +120,15 @@ func damage_taken(Damage):
 		$AnimatedSprite2D.show()
 		await get_tree().create_timer(0.05).timeout
 
-func apply_knockback(force, Player):
-	if not knockback_active:
-		knockback_force = force
-		var rng = RandomNumberGenerator.new()
-		var randomx = rng.randi_range(-10,10)
-		var randomy = rng.randi_range(-10,10)
-		knockback_direction = (global_position - Player.global_position).normalized() + Vector2(randomx,randomy).normalized()
-		knockback = knockback_direction.normalized() * knockback_force
-		knockback_active = true
+func apply_knockback(force: float, source: Node2D) -> void:
+	if knockback_active or dead:
+		return
+
+	knockback_force = force
+	knockback_direction = (global_position - source.global_position).normalized()
+	if knockback_direction == Vector2.ZERO:
+		knockback_direction = Vector2.RIGHT
+	knockback_active = true
 
 
 func _on_animated_sprite_2d_animation_finished():

@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	# Beweging
 	velocity = input_dir.normalized() * speed
 	move_and_slide()
+	_push_colliding_enemies()
 
 	# Karakter omdraaien
 	if input_dir.x < 0:
@@ -44,6 +45,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		if animation.animation != "idle":
 			animation.play("idle")
+
+func _push_colliding_enemies() -> void:
+	for collision_index in get_slide_collision_count():
+		var collider = get_slide_collision(collision_index).get_collider()
+		if collider is CharacterBody2D and collider.has_method("apply_knockback"):
+			collider.apply_knockback(250.0, self)
 
 
 func _input(event: InputEvent) -> void:

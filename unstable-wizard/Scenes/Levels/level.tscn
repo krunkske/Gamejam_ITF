@@ -3398,7 +3398,7 @@ position = Vector2(1347, -652)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Node/Marker2D3" unique_id=1593267365]
 
-[node name="Marker2D4" type="Marker2D" parent="Node" unique_id=1803744302 groups=["spawnpoints"]]
+[node name="Marker2D4" type="Marker2D" parent="Node" unique_id=1803744302 groups=["spawnpoints", "goblin_spawnpoints"]]
 position = Vector2(797, 307)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Node/Marker2D4" unique_id=1306964767]

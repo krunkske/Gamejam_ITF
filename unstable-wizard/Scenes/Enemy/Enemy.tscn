@@ -322,6 +322,8 @@ height = 244.0
 
 [node name="enemy" type="CharacterBody2D" unique_id=338898116]
 scale = Vector2(0.25, 0.25)
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_m1htj")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=186954524]
