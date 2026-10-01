@@ -20,6 +20,7 @@ var dead := false
 func _ready() -> void:
 	# Attack maar één keer afspelen
 	animation.sprite_frames.set_animation_loop("attack", false)
+	$HUD/GameOver/CenterContainer/Panel/VBoxContainer/RetryButton.pressed.connect(_on_retry_pressed)
 	health = max_health
 	health_bar.max_value = max_health
 	health_bar.value = health
@@ -78,7 +79,12 @@ func take_damage(amount: int) -> void:
 		velocity = Vector2.ZERO
 		animation.play("idle")
 		set_process_input(false)
-		$anination/Camera2D/game_over.show()
+		$HUD/GameOver.show()
+		$HUD/GameOver/CenterContainer/Panel/VBoxContainer/RetryButton.grab_focus()
+
+
+func _on_retry_pressed() -> void:
+	get_tree().reload_current_scene()
 
 
 func _input(event: InputEvent) -> void:

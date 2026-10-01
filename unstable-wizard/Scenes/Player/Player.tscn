@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bcncthlvawax2" path="res://Scenes/Player/idle_02.png" id="7_0u84n"]
 [ext_resource type="Texture2D" uid="uid://640xtegqlq6h" path="res://Scenes/Player/idle_03.png" id="8_esmjy"]
 [ext_resource type="Texture2D" uid="uid://dln36dueajt7d" path="res://Scenes/Player/idle_04.png" id="9_6tu5v"]
-[ext_resource type="Texture2D" uid="uid://cmnnrqcp2d4w8" path="res://Scenes/Player/game_over.png" id="14_0u84n"]
+[ext_resource type="Texture2D" path="res://Gameover.png" id="14_0u84n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xww6"]
 animations = [{
@@ -87,6 +87,60 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_game_over_panel"]
+bg_color = Color(0.035, 0.02, 0.07, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.32, 0.78, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 16
+content_margin_left = 24.0
+content_margin_top = 20.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_retry_normal"]
+bg_color = Color(0.78, 0.55, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.82, 0.48, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_retry_hover"]
+bg_color = Color(0.93, 0.7, 0.3, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9, 0.65, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_retry_pressed"]
+bg_color = Color(0.58, 0.37, 0.12, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.94, 0.72, 0.36, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="player" type="CharacterBody2D" unique_id=114388994]
 collision_layer = 2
 collision_mask = 5
@@ -97,11 +151,6 @@ sprite_frames = SubResource("SpriteFrames_0xww6")
 animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="anination" unique_id=1515920354]
-
-[node name="game_over" type="Sprite2D" parent="anination/Camera2D" unique_id=2015227255]
-visible = false
-scale = Vector2(1.3771564, 1.3642857)
-texture = ExtResource("14_0u84n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=475023661]
 position = Vector2(0, 6)
@@ -127,3 +176,63 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxFlat_health_background")
 theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
+
+[node name="GameOver" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="HUD/GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.008, 0.035, 0.78)
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="HUD/GameOver/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_game_over_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/GameOver/CenterContainer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GameOverImage" type="TextureRect" parent="HUD/GameOver/CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(600, 338)
+layout_mode = 2
+texture = ExtResource("14_0u84n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Message" type="Label" parent="HUD/GameOver/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89, 0.83, 0.98, 1)
+theme_override_font_sizes/font_size = 18
+text = "De magie is uitgewerkt. Maar niet voorgoed."
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="HUD/GameOver/CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(280, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.12, 0.07, 0.02, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_retry_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_retry_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_retry_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_retry_hover")
+text = "Opnieuw proberen"
