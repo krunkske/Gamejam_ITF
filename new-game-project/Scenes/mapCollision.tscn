@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dm554cq81fehe"]
+[gd_scene format=3 uid="uid://dm554cq81fehe"]
 
 [ext_resource type="Texture2D" uid="uid://bbggtkk8atkog" path="res://Assets/map/map v2.png" id="1_h0kil"]
 [ext_resource type="Texture2D" uid="uid://ci32egy3aqoc0" path="res://Assets/prop_radius_0.25.png" id="2_bhuks"]
@@ -116,30 +116,30 @@ polygon = PackedVector2Array(-47, -184, 3153, -184, 3153, -90, -47, -90)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ma16y"]
 polygon = PackedVector2Array(3118, -90, 3213, -90, 3213, 5644, 3118, 5644)
 
-[node name="mapCollision" type="StaticBody2D"]
+[node name="mapCollision" type="StaticBody2D" unique_id=271472249]
 collision_layer = 2
 collision_mask = 13
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1601426694]
 position = Vector2(1500, 2782)
 scale = Vector2(5, 5)
 texture = ExtResource("1_h0kil")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1253146418]
 self_modulate = Color(1, 1, 1, 0.72549)
 z_index = 5
 position = Vector2(2345, 3185.5)
 scale = Vector2(5.00935, 5.17583)
 texture = ExtResource("2_imoil")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1965762592]
 navigation_polygon = SubResource("NavigationPolygon_v1mjk")
 
-[node name="wall_collision" type="CollisionShape2D" parent="."]
+[node name="wall_collision" type="CollisionShape2D" parent="." unique_id=46153456]
 position = Vector2(3166, 2332.5)
 shape = SubResource("RectangleShape2D_buaku")
 
-[node name="ColorRect" type="ColorRect" parent="wall_collision"]
+[node name="ColorRect" type="ColorRect" parent="wall_collision" unique_id=2113622647]
 offset_left = -48.0
 offset_top = -2425.0
 offset_right = 47.0
@@ -147,11 +147,11 @@ offset_bottom = 3327.0
 color = Color(0.898039, 0.898039, 0.898039, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="wall_collision2" type="CollisionShape2D" parent="."]
+[node name="wall_collision2" type="CollisionShape2D" parent="." unique_id=751033725]
 position = Vector2(1550.5, 5691)
 shape = SubResource("RectangleShape2D_fodgc")
 
-[node name="ColorRect3" type="ColorRect" parent="wall_collision2"]
+[node name="ColorRect3" type="ColorRect" parent="wall_collision2" unique_id=1382326064]
 offset_left = -1598.5
 offset_top = -47.0
 offset_right = 1601.5
@@ -159,11 +159,11 @@ offset_bottom = 47.0
 color = Color(0.899258, 0.899258, 0.899258, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="wall_collision3" type="CollisionShape2D" parent="."]
+[node name="wall_collision3" type="CollisionShape2D" parent="." unique_id=1400361050]
 position = Vector2(0, 2342)
 shape = SubResource("RectangleShape2D_b8xe7")
 
-[node name="ColorRect2" type="ColorRect" parent="wall_collision3"]
+[node name="ColorRect2" type="ColorRect" parent="wall_collision3" unique_id=44261137]
 offset_left = -47.5
 offset_top = -2436.0
 offset_right = 47.5
@@ -171,11 +171,11 @@ offset_bottom = 3318.0
 color = Color(0.899258, 0.899258, 0.899258, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="wall_collision4" type="CollisionShape2D" parent="."]
+[node name="wall_collision4" type="CollisionShape2D" parent="." unique_id=1392440797]
 position = Vector2(1555, -136)
 shape = SubResource("RectangleShape2D_xh1kq")
 
-[node name="ColorRect4" type="ColorRect" parent="wall_collision4"]
+[node name="ColorRect4" type="ColorRect" parent="wall_collision4" unique_id=42450796]
 offset_left = -1602.0
 offset_top = -48.0
 offset_right = 1598.0
@@ -183,660 +183,660 @@ offset_bottom = 46.0
 color = Color(0.899258, 0.899258, 0.899258, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1000720952]
 position = Vector2(2437.5, 2457.5)
 shape = SubResource("RectangleShape2D_6igir")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1858174733]
 position = Vector2(2412.5, 527.5)
 shape = SubResource("RectangleShape2D_cvf4j")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=247300070]
 position = Vector2(1242.5, 2225)
 shape = SubResource("RectangleShape2D_aa7we")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=971223451]
 position = Vector2(1242.5, 1590)
 shape = SubResource("RectangleShape2D_q318q")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1508012366]
 position = Vector2(1037.5, 1907.5)
 shape = SubResource("RectangleShape2D_w8jfp")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=1772427390]
 position = Vector2(1242.5, 967.5)
 shape = SubResource("RectangleShape2D_umf75")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="." unique_id=1487910393]
 position = Vector2(1382.5, 3765)
 shape = SubResource("RectangleShape2D_8ntoq")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="." unique_id=1924233372]
 position = Vector2(1045, 632.5)
 shape = SubResource("RectangleShape2D_erow2")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="." unique_id=949297014]
 position = Vector2(1242.5, 310)
 shape = SubResource("RectangleShape2D_mc1kd")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="." unique_id=646290492]
 position = Vector2(1165, 3212.5)
 shape = SubResource("RectangleShape2D_sra5d")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="." unique_id=1037542861]
 position = Vector2(2606.5, 4967.5)
 shape = SubResource("RectangleShape2D_1rkmt")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="." unique_id=166869605]
 position = Vector2(2605, 3952.5)
 shape = SubResource("RectangleShape2D_gemgx")
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="." unique_id=1436493019]
 position = Vector2(2427.5, 1487.5)
 shape = SubResource("RectangleShape2D_rja1p")
 
-[node name="CollisionShape2D26" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="." unique_id=495673289]
 position = Vector2(1322.5, 4500)
 shape = SubResource("RectangleShape2D_hhma1")
 
-[node name="CollisionShape2D27" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="." unique_id=1982166037]
 position = Vector2(1117.5, 4817.5)
 shape = SubResource("RectangleShape2D_erjy8")
 
-[node name="CollisionShape2D28" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="." unique_id=1378569448]
 position = Vector2(1322.5, 5160)
 shape = SubResource("RectangleShape2D_mnoir")
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="." unique_id=415355594]
 position = Vector2(186, 1630)
 shape = SubResource("RectangleShape2D_kab6a")
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node" parent="." unique_id=2126070315]
 
-[node name="Marker2D" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D" type="Marker2D" parent="Node" unique_id=14177918 groups=["SpawnPoints"]]
 position = Vector2(150, 75)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D" unique_id=322911213]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D2" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D2" type="Marker2D" parent="Node" unique_id=59531220 groups=["SpawnPoints"]]
 position = Vector2(540, 75)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D2"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D2" unique_id=708724674]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D56" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D56" type="Marker2D" parent="Node" unique_id=1188111491 groups=["SpawnPoints"]]
 position = Vector2(996, 21)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D56"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D56" unique_id=972361078]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D57" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D57" type="Marker2D" parent="Node" unique_id=147441719 groups=["SpawnPoints"]]
 position = Vector2(1386, 21)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D57"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D57" unique_id=1270376479]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D58" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D58" type="Marker2D" parent="Node" unique_id=1377694177 groups=["SpawnPoints"]]
 position = Vector2(1774, 15)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D58"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D58" unique_id=1616076912]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D59" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D59" type="Marker2D" parent="Node" unique_id=1704027636 groups=["SpawnPoints"]]
 position = Vector2(2164, 15)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D59"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D59" unique_id=1138168715]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D60" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D60" type="Marker2D" parent="Node" unique_id=1943344444 groups=["SpawnPoints"]]
 position = Vector2(2450, 7)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D60"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D60" unique_id=318085302]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D61" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D61" type="Marker2D" parent="Node" unique_id=908451106 groups=["SpawnPoints"]]
 position = Vector2(2840, 7)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D61"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D61" unique_id=82940017]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D3" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D3" type="Marker2D" parent="Node" unique_id=1025160697 groups=["SpawnPoints"]]
 position = Vector2(540, 520)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D3"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D3" unique_id=1239948782]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D5" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D5" type="Marker2D" parent="Node" unique_id=1362528133 groups=["SpawnPoints"]]
 position = Vector2(628, 881)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D5"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D5" unique_id=1146975850]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D6" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D6" type="Marker2D" parent="Node" unique_id=1027236074 groups=["SpawnPoints"]]
 position = Vector2(628, 1326)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D6"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D6" unique_id=1308168598]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D7" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D7" type="Marker2D" parent="Node" unique_id=1987649127 groups=["SpawnPoints"]]
 position = Vector2(621, 1790)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D7"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D7" unique_id=1516919008]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D62" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D62" type="Marker2D" parent="Node" unique_id=1535028095 groups=["SpawnPoints"]]
 position = Vector2(2956, 240)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D62"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D62" unique_id=603638233]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D63" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D63" type="Marker2D" parent="Node" unique_id=1302941078 groups=["SpawnPoints"]]
 position = Vector2(2956, 685)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D63"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D63" unique_id=234622037]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D64" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D64" type="Marker2D" parent="Node" unique_id=733914905 groups=["SpawnPoints"]]
 position = Vector2(2949, 1149)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D64"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D64" unique_id=64250353]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D65" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D65" type="Marker2D" parent="Node" unique_id=1874078774 groups=["SpawnPoints"]]
 position = Vector2(2953, 1399)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D65"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D65" unique_id=1701113022]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D66" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D66" type="Marker2D" parent="Node" unique_id=220138686 groups=["SpawnPoints"]]
 position = Vector2(2953, 1844)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D66"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D66" unique_id=22088478]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D67" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D67" type="Marker2D" parent="Node" unique_id=1086852993 groups=["SpawnPoints"]]
 position = Vector2(2946, 2308)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D67"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D67" unique_id=1135243036]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D68" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D68" type="Marker2D" parent="Node" unique_id=1831741466 groups=["SpawnPoints"]]
 position = Vector2(2950, 2547)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D68"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D68" unique_id=806392165]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D69" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D69" type="Marker2D" parent="Node" unique_id=1803604525 groups=["SpawnPoints"]]
 position = Vector2(2950, 2992)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D69"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D69" unique_id=1382527317]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D70" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D70" type="Marker2D" parent="Node" unique_id=1408113970 groups=["SpawnPoints"]]
 position = Vector2(2943, 3456)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D70"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D70" unique_id=21667032]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D8" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D8" type="Marker2D" parent="Node" unique_id=2092855436 groups=["SpawnPoints"]]
 position = Vector2(621, 2235)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D8"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D8" unique_id=1578991870]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D9" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D9" type="Marker2D" parent="Node" unique_id=426662156 groups=["SpawnPoints"]]
 position = Vector2(601, 2684)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D9"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D9" unique_id=1912049690]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D10" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D10" type="Marker2D" parent="Node" unique_id=1303864670 groups=["SpawnPoints"]]
 position = Vector2(601, 3129)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D10"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D10" unique_id=807831045]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D11" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D11" type="Marker2D" parent="Node" unique_id=1560696234 groups=["SpawnPoints"]]
 position = Vector2(594, 3593)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D11"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D11" unique_id=45513180]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D12" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D12" type="Marker2D" parent="Node" unique_id=286425288 groups=["SpawnPoints"]]
 position = Vector2(594, 4038)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D12"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D12" unique_id=71429065]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D13" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D13" type="Marker2D" parent="Node" unique_id=724695206 groups=["SpawnPoints"]]
 position = Vector2(601, 4376)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D13"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D13" unique_id=1414294660]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D14" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D14" type="Marker2D" parent="Node" unique_id=102009472 groups=["SpawnPoints"]]
 position = Vector2(594, 4840)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D14"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D14" unique_id=1280787060]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D15" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D15" type="Marker2D" parent="Node" unique_id=1199947176 groups=["SpawnPoints"]]
 position = Vector2(594, 5285)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D15"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D15" unique_id=2141524737]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D16" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D16" type="Marker2D" parent="Node" unique_id=1855195682 groups=["SpawnPoints"]]
 position = Vector2(271, 2684)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D16"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D16" unique_id=756197616]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D17" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D17" type="Marker2D" parent="Node" unique_id=1664260052 groups=["SpawnPoints"]]
 position = Vector2(271, 3129)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D17"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D17" unique_id=473163675]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D18" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D18" type="Marker2D" parent="Node" unique_id=947183484 groups=["SpawnPoints"]]
 position = Vector2(264, 3593)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D18"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D18" unique_id=162245783]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D19" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D19" type="Marker2D" parent="Node" unique_id=162412517 groups=["SpawnPoints"]]
 position = Vector2(264, 4038)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D19"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D19" unique_id=466792638]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D20" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D20" type="Marker2D" parent="Node" unique_id=1218513765 groups=["SpawnPoints"]]
 position = Vector2(271, 4376)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D20"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D20" unique_id=133061691]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D21" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D21" type="Marker2D" parent="Node" unique_id=891341676 groups=["SpawnPoints"]]
 position = Vector2(264, 4840)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D21"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D21" unique_id=641521699]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D22" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D22" type="Marker2D" parent="Node" unique_id=802143583 groups=["SpawnPoints"]]
 position = Vector2(264, 5285)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D22"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D22" unique_id=1359567665]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D23" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D23" type="Marker2D" parent="Node" unique_id=1916466661 groups=["SpawnPoints"]]
 position = Vector2(594, 4840)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D23"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D23" unique_id=76434544]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D24" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D24" type="Marker2D" parent="Node" unique_id=181471784 groups=["SpawnPoints"]]
 position = Vector2(594, 5285)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D24"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D24" unique_id=1490262633]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D25" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D25" type="Marker2D" parent="Node" unique_id=465634845 groups=["SpawnPoints"]]
 position = Vector2(264, 4840)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D25"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D25" unique_id=1030054863]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D26" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D26" type="Marker2D" parent="Node" unique_id=941479700 groups=["SpawnPoints"]]
 position = Vector2(264, 5285)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D26"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D26" unique_id=144841413]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D27" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D27" type="Marker2D" parent="Node" unique_id=725975539 groups=["SpawnPoints"]]
 position = Vector2(2123, 5079)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D27"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D27" unique_id=1189703856]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D28" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D28" type="Marker2D" parent="Node" unique_id=1805727175 groups=["SpawnPoints"]]
 position = Vector2(2123, 5524)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D28"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D28" unique_id=530349309]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D29" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D29" type="Marker2D" parent="Node" unique_id=1965615187 groups=["SpawnPoints"]]
 position = Vector2(1793, 5079)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D29"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D29" unique_id=673256173]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D30" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D30" type="Marker2D" parent="Node" unique_id=660961040 groups=["SpawnPoints"]]
 position = Vector2(1793, 5524)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D30"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D30" unique_id=220133172]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D35" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D35" type="Marker2D" parent="Node" unique_id=1209573746 groups=["SpawnPoints"]]
 position = Vector2(2123, 4282)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D35"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D35" unique_id=1444358404]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D36" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D36" type="Marker2D" parent="Node" unique_id=1255169003 groups=["SpawnPoints"]]
 position = Vector2(2123, 4727)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D36"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D36" unique_id=1834319170]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D37" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D37" type="Marker2D" parent="Node" unique_id=1780293550 groups=["SpawnPoints"]]
 position = Vector2(1793, 4282)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D37"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D37" unique_id=437835881]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D39" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D39" type="Marker2D" parent="Node" unique_id=356333768 groups=["SpawnPoints"]]
 position = Vector2(1523, 4134)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D39"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D39" unique_id=1402773997]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D41" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D41" type="Marker2D" parent="Node" unique_id=213993209 groups=["SpawnPoints"]]
 position = Vector2(1979, 3877)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D41"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D41" unique_id=537023099]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D42" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D42" type="Marker2D" parent="Node" unique_id=310297957 groups=["SpawnPoints"]]
 position = Vector2(1470, 4862)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D42"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D42" unique_id=2145000024]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D40" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D40" type="Marker2D" parent="Node" unique_id=1122477726 groups=["SpawnPoints"]]
 position = Vector2(1193, 4134)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D40"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D40" unique_id=183455558]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D38" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D38" type="Marker2D" parent="Node" unique_id=1480410125 groups=["SpawnPoints"]]
 position = Vector2(1793, 4727)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D38"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D38" unique_id=2129560168]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D43" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D43" type="Marker2D" parent="Node" unique_id=2130947128 groups=["SpawnPoints"]]
 position = Vector2(1874, 2893)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D43"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D43" unique_id=578778387]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D49" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D49" type="Marker2D" parent="Node" unique_id=316020822 groups=["SpawnPoints"]]
 position = Vector2(1834, 2480)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D49"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D49" unique_id=1301498875]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D50" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D50" type="Marker2D" parent="Node" unique_id=1892907363 groups=["SpawnPoints"]]
 position = Vector2(1835, 1923)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D50"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D50" unique_id=571794485]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D51" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D51" type="Marker2D" parent="Node" unique_id=1048983016 groups=["SpawnPoints"]]
 position = Vector2(1379, 1965)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D51"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D51" unique_id=1749114013]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D52" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D52" type="Marker2D" parent="Node" unique_id=1005100108 groups=["SpawnPoints"]]
 position = Vector2(1230, 1272)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D52"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D52" unique_id=495555875]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D53" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D53" type="Marker2D" parent="Node" unique_id=2129634375 groups=["SpawnPoints"]]
 position = Vector2(1837, 1270)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D53"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D53" unique_id=548251413]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D54" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D54" type="Marker2D" parent="Node" unique_id=95846094 groups=["SpawnPoints"]]
 position = Vector2(1832, 785)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D54"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D54" unique_id=716973295]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D55" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D55" type="Marker2D" parent="Node" unique_id=1092622487 groups=["SpawnPoints"]]
 position = Vector2(1414, 698)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D55"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D55" unique_id=708652228]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D44" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D44" type="Marker2D" parent="Node" unique_id=1580719001 groups=["SpawnPoints"]]
 position = Vector2(1874, 3338)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D44"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D44" unique_id=500140348]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D45" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D45" type="Marker2D" parent="Node" unique_id=56435940 groups=["SpawnPoints"]]
 position = Vector2(1544, 2893)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D45"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D45" unique_id=345530162]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D47" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D47" type="Marker2D" parent="Node" unique_id=1103187973 groups=["SpawnPoints"]]
 position = Vector2(1386, 2668)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D47"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D47" unique_id=684219350]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D48" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D48" type="Marker2D" parent="Node" unique_id=132097258 groups=["SpawnPoints"]]
 position = Vector2(1056, 2668)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D48"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D48" unique_id=2063810480]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D46" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D46" type="Marker2D" parent="Node" unique_id=1443401723 groups=["SpawnPoints"]]
 position = Vector2(1544, 3338)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D46"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D46" unique_id=1520068275]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D31" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D31" type="Marker2D" parent="Node" unique_id=1695980300 groups=["SpawnPoints"]]
 position = Vector2(1425, 5528)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D31"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D31" unique_id=771173335]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D32" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D32" type="Marker2D" parent="Node" unique_id=251721961 groups=["SpawnPoints"]]
 position = Vector2(1095, 5528)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D32"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D32" unique_id=1803816080]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D33" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D33" type="Marker2D" parent="Node" unique_id=803250999 groups=["SpawnPoints"]]
 position = Vector2(2776, 5510)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D33"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D33" unique_id=1902293201]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D34" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D34" type="Marker2D" parent="Node" unique_id=2083548662 groups=["SpawnPoints"]]
 position = Vector2(2446, 5510)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D34"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D34" unique_id=728077099]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="Marker2D4" type="Marker2D" parent="Node" groups=["SpawnPoints"]]
+[node name="Marker2D4" type="Marker2D" parent="Node" unique_id=1791184005 groups=["SpawnPoints"]]
 position = Vector2(150, 520)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D4"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node/Marker2D4" unique_id=1344881725]
 position = Vector2(-1, -1)
 rect = Rect2(0, 0, 2, 2)
 
-[node name="playerSpawn" type="Node" parent="."]
+[node name="playerSpawn" type="Node" parent="." unique_id=1801203240]
 
-[node name="Node2D" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+[node name="Node2D" type="Node2D" parent="playerSpawn" unique_id=140113681 groups=["PlayerSpawn"]]
 position = Vector2(1723, 3093)
 
-[node name="Node2D2" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+[node name="Node2D2" type="Node2D" parent="playerSpawn" unique_id=2100364373 groups=["PlayerSpawn"]]
 position = Vector2(345, 313)
 
-[node name="Node2D3" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+[node name="Node2D3" type="Node2D" parent="playerSpawn" unique_id=1217766977 groups=["PlayerSpawn"]]
 position = Vector2(1855, 426)
 
-[node name="Node2D4" type="Node2D" parent="playerSpawn" groups=["PlayerSpawn"]]
+[node name="Node2D4" type="Node2D" parent="playerSpawn" unique_id=1826149867 groups=["PlayerSpawn"]]
 position = Vector2(439, 4218)
 
-[node name="shopSpawn" type="Node" parent="."]
+[node name="shopSpawn" type="Node" parent="." unique_id=884055484]
 
-[node name="Marker2D" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D" type="Marker2D" parent="shopSpawn" unique_id=2017383454 groups=["shopSpawn"]]
 position = Vector2(1470, 4814)
 
-[node name="Marker2D2" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D2" type="Marker2D" parent="shopSpawn" unique_id=281269605 groups=["shopSpawn"]]
 position = Vector2(876, 4817)
 
-[node name="Marker2D3" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D3" type="Marker2D" parent="shopSpawn" unique_id=816489095 groups=["shopSpawn"]]
 position = Vector2(171, 2554)
 
-[node name="Marker2D4" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D4" type="Marker2D" parent="shopSpawn" unique_id=1711256734 groups=["shopSpawn"]]
 position = Vector2(335, 521)
 
-[node name="Marker2D5" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D5" type="Marker2D" parent="shopSpawn" unique_id=671884033 groups=["shopSpawn"]]
 position = Vector2(1416, 637)
 
-[node name="Marker2D6" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D6" type="Marker2D" parent="shopSpawn" unique_id=269645223 groups=["shopSpawn"]]
 position = Vector2(2343, 3172)
 
-[node name="Marker2D7" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D7" type="Marker2D" parent="shopSpawn" unique_id=43097290 groups=["shopSpawn"]]
 position = Vector2(2827, 1468)
 
-[node name="Marker2D8" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D8" type="Marker2D" parent="shopSpawn" unique_id=376180117 groups=["shopSpawn"]]
 position = Vector2(2417, 86)
 
-[node name="Marker2D9" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D9" type="Marker2D" parent="shopSpawn" unique_id=1911699618 groups=["shopSpawn"]]
 position = Vector2(2603, 5449)
 
-[node name="Marker2D10" type="Marker2D" parent="shopSpawn" groups=["shopSpawn"]]
+[node name="Marker2D10" type="Marker2D" parent="shopSpawn" unique_id=543062461 groups=["shopSpawn"]]
 position = Vector2(1379, 1897)
 
-[node name="light" type="Node" parent="."]
+[node name="light" type="Node" parent="." unique_id=817812497]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="light"]
+[node name="CanvasModulate" type="CanvasModulate" parent="light" unique_id=989973842]
 color = Color(0.447059, 0.447059, 0.447059, 1)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="light" unique_id=751103768]
 occluder = SubResource("OccluderPolygon2D_y7kp4")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="light" unique_id=604670792]
 occluder = SubResource("OccluderPolygon2D_85n38")
 
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="light" unique_id=824702516]
 occluder = SubResource("OccluderPolygon2D_cv2pk")
 
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="light" unique_id=1304562454]
 occluder = SubResource("OccluderPolygon2D_8eckg")
 
-[node name="LightOccluder2D5" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="light" unique_id=1296371371]
 occluder = SubResource("OccluderPolygon2D_hkg67")
 
-[node name="LightOccluder2D6" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="light" unique_id=379097335]
 occluder = SubResource("OccluderPolygon2D_yiiuq")
 
-[node name="LightOccluder2D7" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="light" unique_id=2004267684]
 occluder = SubResource("OccluderPolygon2D_fae08")
 
-[node name="LightOccluder2D8" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="light" unique_id=1844583204]
 occluder = SubResource("OccluderPolygon2D_031ro")
 
-[node name="LightOccluder2D9" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="light" unique_id=1504719177]
 occluder = SubResource("OccluderPolygon2D_vcn5s")
 
-[node name="LightOccluder2D10" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="light" unique_id=1771280839]
 occluder = SubResource("OccluderPolygon2D_14784")
 
-[node name="LightOccluder2D11" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="light" unique_id=298737940]
 occluder = SubResource("OccluderPolygon2D_b27f4")
 
-[node name="LightOccluder2D12" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="light" unique_id=928539191]
 occluder = SubResource("OccluderPolygon2D_jmj67")
 
-[node name="LightOccluder2D13" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="light" unique_id=439109448]
 occluder = SubResource("OccluderPolygon2D_0geco")
 
-[node name="LightOccluder2D14" type="LightOccluder2D" parent="light"]
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="light" unique_id=1042398707]
 occluder = SubResource("OccluderPolygon2D_ma16y")
 
-[node name="PointLight2D" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D" type="PointLight2D" parent="light" unique_id=1696541942 groups=["lights"]]
 position = Vector2(1442, 4667)
 rotation = 1.57079
 energy = 0.5
@@ -844,7 +844,7 @@ shadow_enabled = true
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D2" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D2" type="PointLight2D" parent="light" unique_id=317799789 groups=["lights"]]
 position = Vector2(1516, 4667)
 rotation = 1.57079
 energy = 0.5
@@ -852,7 +852,7 @@ shadow_enabled = true
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D3" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D3" type="PointLight2D" parent="light" unique_id=1602365009 groups=["lights"]]
 z_index = 1
 position = Vector2(2473, 5431)
 rotation = 1.57079
@@ -860,7 +860,7 @@ energy = 0.5
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D4" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D4" type="PointLight2D" parent="light" unique_id=124010578 groups=["lights"]]
 z_index = 1
 position = Vector2(2870, 5431)
 rotation = 1.57079
@@ -868,7 +868,7 @@ energy = 0.5
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D5" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D5" type="PointLight2D" parent="light" unique_id=969086970 groups=["lights"]]
 z_index = 1
 position = Vector2(1547, 2375)
 rotation = 1.57079
@@ -877,7 +877,7 @@ shadow_enabled = true
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D6" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D6" type="PointLight2D" parent="light" unique_id=479369650 groups=["lights"]]
 z_index = 1
 position = Vector2(1547, 2451)
 rotation = 1.57079
@@ -885,7 +885,7 @@ energy = 0.6
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D7" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D7" type="PointLight2D" parent="light" unique_id=1351139172 groups=["lights"]]
 z_index = 1
 position = Vector2(1463, 2451)
 rotation = 1.57079
@@ -893,7 +893,7 @@ energy = 0.5
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D8" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D8" type="PointLight2D" parent="light" unique_id=2008601434 groups=["lights"]]
 z_index = 1
 position = Vector2(1552, 4011)
 rotation = 1.57079
@@ -901,7 +901,7 @@ energy = 0.8
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D9" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D9" type="PointLight2D" parent="light" unique_id=125968190 groups=["lights"]]
 z_index = 1
 position = Vector2(1638, 4011)
 rotation = 1.57079
@@ -909,7 +909,7 @@ energy = 0.8
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D10" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D10" type="PointLight2D" parent="light" unique_id=62327727 groups=["lights"]]
 z_index = 1
 position = Vector2(2438, 917.316)
 rotation = 1.57079
@@ -918,7 +918,7 @@ energy = 0.5
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="PointLight2D11" type="PointLight2D" parent="light" groups=["lights"]]
+[node name="PointLight2D11" type="PointLight2D" parent="light" unique_id=2140667630 groups=["lights"]]
 z_index = 1
 position = Vector2(2517, 922)
 rotation = 1.57079
@@ -927,53 +927,53 @@ energy = 0.5
 texture = ExtResource("2_bhuks")
 texture_scale = 2.0
 
-[node name="lanterns" type="Node" parent="."]
+[node name="lanterns" type="Node" parent="." unique_id=1707295888]
 
-[node name="lantern" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern" parent="lanterns" unique_id=1441403946 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(829, 51)
 
-[node name="lantern3" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern3" parent="lanterns" unique_id=1154904015 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(1630, 315)
 hanging = true
 flipped = true
 
-[node name="lantern7" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern7" parent="lanterns" unique_id=501425844 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(1630, 987)
 hanging = true
 flipped = true
 
-[node name="lantern12" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern12" parent="lanterns" unique_id=292584801 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(2048, 1495)
 hanging = true
 
-[node name="lantern13" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern13" parent="lanterns" unique_id=1492542502 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(2228, 3874)
 hanging = true
 
-[node name="lantern14" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern14" parent="lanterns" unique_id=501165631 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(2228, 4959)
 hanging = true
 
-[node name="lantern2" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern2" parent="lanterns" unique_id=1220675229 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(581, 736)
 
-[node name="lantern4" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern4" parent="lanterns" unique_id=278862789 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(962, 2610)
 
-[node name="lantern5" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern5" parent="lanterns" unique_id=1384897157 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(1454, 2617)
 
-[node name="lantern6" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern6" parent="lanterns" unique_id=984595142 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(755, 5486)
 
-[node name="lantern9" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern9" parent="lanterns" unique_id=164398031 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(755, 4089)
 
-[node name="lantern10" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern10" parent="lanterns" unique_id=503556188 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(2821, 3117)
 
-[node name="lantern11" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern11" parent="lanterns" unique_id=368013363 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(2969, 51)
 
-[node name="lantern8" parent="lanterns" groups=["lanterns"] instance=ExtResource("2_urm4c")]
+[node name="lantern8" parent="lanterns" unique_id=2051369934 groups=["lanterns"] instance=ExtResource("2_urm4c")]
 position = Vector2(600, 1688)

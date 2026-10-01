@@ -1,12 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://cwam0862ljvd8"]
+[gd_scene format=3 uid="uid://cwam0862ljvd8"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_kly4q"]
+[ext_resource type="Script" uid="uid://cxhwxu601o0sv" path="res://Scripts/main_menu.gd" id="1_kly4q"]
 [ext_resource type="Theme" uid="uid://da58o1lo1s1vr" path="res://Assets/button_theme.tres" id="2_ivo4i"]
-[ext_resource type="Texture2D" uid="uid://b5i0d68f2iiu" path="res://Assets/hand+fruit/banaan.png" id="2_l8uc1"]
-[ext_resource type="Texture2D" uid="uid://cdlsym6bd07kx" path="res://Assets/hand+fruit/appel.png" id="3_4ph5t"]
-[ext_resource type="Texture2D" uid="uid://dg5bsasql4n85" path="res://Assets/hand+fruit/druiven.png" id="4_cr1yt"]
 [ext_resource type="Texture2D" uid="uid://cdwau730u31su" path="res://Assets/GUI/keys.png" id="6_hviur"]
-[ext_resource type="Texture2D" uid="uid://fnrxd0rtbj76" path="res://Assets/GUI/healthbar.png" id="6_kf5xr"]
 [ext_resource type="Texture2D" uid="uid://bs4vgb16ib65x" path="res://Assets/GUI/mouse.png" id="7_5mqej"]
 [ext_resource type="Texture2D" uid="uid://c5fxdn4n6d1k8" path="res://Assets/GUI/arrow_keys.png" id="7_78vvt"]
 [ext_resource type="Texture2D" uid="uid://bwohwpiosfe5n" path="res://Assets/GUI/special_buttons.png" id="9_eg27g"]
@@ -16,19 +12,6 @@
 font_size = 64
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_031u6"]
-font_size = 32
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tftbx"]
-atlas = ExtResource("6_kf5xr")
-region = Rect2(3, 6, 42, 5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ska4i"]
-atlas = ExtResource("6_kf5xr")
-region = Rect2(51, 6, 42, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_42niy"]
 font_size = 32
@@ -94,168 +77,105 @@ region = Rect2(2, 2, 28, 12)
 atlas = ExtResource("9_eg27g")
 region = Rect2(36, 2, 24, 12)
 
-[node name="main_menu" type="CanvasLayer"]
+[node name="main_menu" type="CanvasLayer" unique_id=1904496482]
 script = ExtResource("1_kly4q")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=117207615]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 600.0
 offset_bottom = 799.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1936118366]
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 1018.0
 
-[node name="ColorRect" type="ColorRect" parent="Control/PanelContainer"]
+[node name="ColorRect" type="ColorRect" parent="Control/PanelContainer" unique_id=1785867174]
 layout_mode = 2
 color = Color(0.576471, 0.745098, 0.388235, 0.733333)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=291643333]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=1350035269]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=799492136]
 layout_mode = 2
-text = "zombiechaos"
+text = "Crazy wizzard"
 label_settings = SubResource("LabelSettings_xfjok")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=537147804]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Stats" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Damage: 40
-"
-label_settings = SubResource("LabelSettings_031u6")
-
-[node name="OptionButton" type="OptionButton" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_ivo4i")
-theme_override_font_sizes/font_size = 48
-item_count = 3
-selected = 0
-popup/item_0/text = "Banana"
-popup/item_0/icon = ExtResource("2_l8uc1")
-popup/item_0/id = 0
-popup/item_1/text = "Apple"
-popup/item_1/icon = ExtResource("3_4ph5t")
-popup/item_1/id = 1
-popup/item_2/text = "Grape"
-popup/item_2/icon = ExtResource("4_cr1yt")
-popup/item_2/id = 2
-
-[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=482025141]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=600981752]
 layout_mode = 2
 alignment = 1
 
-[node name="start" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="start" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1225429171]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 metadata/_edit_use_anchors_ = true
 
-[node name="HSeparator3" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=907714960]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="publish_local_highscore" type="Button" parent="Control/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("2_ivo4i")
-theme_override_font_sizes/font_size = 38
-text = "publish score"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=689457113]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Scores" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme = ExtResource("2_ivo4i")
-theme_override_font_sizes/font_size = 48
-text = "High scores
-"
-
-[node name="credits" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme = ExtResource("2_ivo4i")
-theme_override_font_sizes/font_size = 48
-text = "extra"
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=2083698966]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="skins" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer6"]
-layout_mode = 2
-theme = ExtResource("2_ivo4i")
-theme_override_font_sizes/font_size = 48
-text = "skins"
-
-[node name="local_highscore" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer6"]
+[node name="local_highscore" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer6" unique_id=711707034]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
 theme_override_font_sizes/font_size = 32
 text = "local highscore: 0"
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=1964854387]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="level" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer9"]
-layout_mode = 2
-theme = ExtResource("2_ivo4i")
-text = "level 1"
-
-[node name="levelBar" type="TextureProgressBar" parent="Control/PanelContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(100, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-nine_patch_stretch = true
-texture_under = SubResource("AtlasTexture_tftbx")
-texture_progress = SubResource("AtlasTexture_ska4i")
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=906359190]
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer8"]
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer8" unique_id=1209783416]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
 text = "performance"
 label_settings = SubResource("LabelSettings_42niy")
 
-[node name="performance" type="OptionButton" parent="Control/PanelContainer/VBoxContainer/HBoxContainer8"]
+[node name="performance" type="OptionButton" parent="Control/PanelContainer/VBoxContainer/HBoxContainer8" unique_id=807975621]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
-item_count = 3
 selected = 0
+item_count = 3
 popup/item_0/text = "native"
 popup/item_0/id = 0
 popup/item_1/text = "0.75 scaling"
@@ -263,99 +183,99 @@ popup/item_1/id = 1
 popup/item_2/text = "0.5 scaling"
 popup/item_2/id = 2
 
-[node name="HSeparator4" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HSeparator4" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=1837079355]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=488508593]
 layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="walk" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="walk" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=1742651915]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
 text = "Walk
 "
 label_settings = SubResource("LabelSettings_t3atk")
 
-[node name="trow" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="trow" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=1251410572]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
-text = "throw"
+text = "shoot"
 label_settings = SubResource("LabelSettings_hhc45")
 
-[node name="dash" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4"]
+[node name="dash" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4" unique_id=320916014]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
 text = "Dash
 "
 label_settings = SubResource("LabelSettings_af7h8")
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=18743563]
 layout_mode = 2
 theme_override_constants/separation = 51
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5" unique_id=725114515]
 layout_mode = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=777349147]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer" unique_id=2002446532]
 layout_mode = 2
 alignment = 1
 
-[node name="Z" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Z" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1617785038]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("AtlasTexture_3337u")
 stretch_mode = 4
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer" unique_id=994924546]
 layout_mode = 2
 alignment = 1
 
-[node name="Q" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Q" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=244847246]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("AtlasTexture_3qfur")
 stretch_mode = 4
 
-[node name="S" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="S" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=153202547]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("AtlasTexture_ki0ou")
 stretch_mode = 4
 
-[node name="D" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="D" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=918335821]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = SubResource("AtlasTexture_1isk3")
 stretch_mode = 4
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=1727358453]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2" unique_id=810911263]
 layout_mode = 2
 alignment = 1
 
-[node name="up" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="up" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1872906533]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 icon = SubResource("AtlasTexture_anymk")
 flat = true
 expand_icon = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2" unique_id=1149616396]
 layout_mode = 2
 alignment = 1
 
-[node name="left" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="left" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1925206335]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 action_mode = 0
@@ -363,7 +283,7 @@ icon = SubResource("AtlasTexture_w4s8j")
 flat = true
 expand_icon = true
 
-[node name="down" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="down" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=182143855]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -372,64 +292,59 @@ icon = SubResource("AtlasTexture_sce1f")
 flat = true
 expand_icon = true
 
-[node name="right" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="right" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1003294081]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 icon = SubResource("AtlasTexture_jhd0o")
 flat = true
 expand_icon = true
 
-[node name="TextureRect5" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5"]
+[node name="TextureRect5" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5" unique_id=579693490]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 texture = ExtResource("7_5mqej")
 stretch_mode = 4
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5" unique_id=72490034]
 layout_mode = 2
 
-[node name="space" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+[node name="space" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer2" unique_id=1269039080]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 texture = SubResource("AtlasTexture_ppanm")
 stretch_mode = 4
 
-[node name="shift" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+[node name="shift" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer2" unique_id=358857645]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 texture = SubResource("AtlasTexture_6eltc")
 stretch_mode = 4
 
-[node name="ctrl" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+[node name="ctrl" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer2" unique_id=543419444]
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 texture = SubResource("AtlasTexture_ucvaa")
 stretch_mode = 4
 
-[node name="HSeparator5" type="HSeparator" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HSeparator5" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=479407016]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=1643443044]
 layout_mode = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer7"]
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer7" unique_id=1735660667]
 layout_mode = 2
 theme = ExtResource("2_ivo4i")
 text = "version 1.1.2"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=2125784203]
 stream = ExtResource("9_eu0js")
 volume_db = 10.0
 
-[connection signal="item_selected" from="Control/PanelContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer2/start" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/publish_local_highscore" to="." method="_on_publish_local_highscore_pressed"]
-[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer3/Scores" to="." method="_on_scores_pressed"]
-[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer3/credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer6/skins" to="." method="_on_skins_pressed"]
 [connection signal="item_selected" from="Control/PanelContainer/VBoxContainer/HBoxContainer8/performance" to="." method="_on_performance_item_selected"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer/up" to="." method="_on_up_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HBoxContainer5/VBoxContainer/VBoxContainer2/HBoxContainer2/left" to="." method="_on_left_pressed"]

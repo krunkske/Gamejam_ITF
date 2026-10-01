@@ -6,16 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://56vvo3hmtinj" path="res://Scenes/gun.tscn" id="2_nj0x7"]
 [ext_resource type="Texture2D" uid="uid://f8lwksp83u4r" path="res://Assets/player/player.png" id="3_6fx75"]
 [ext_resource type="PackedScene" uid="uid://bsp6ixe0nduh7" path="res://Scenes/game_over.tscn" id="3_uxuvh"]
-[ext_resource type="PackedScene" uid="uid://bb5fuhtm2kfah" path="res://Scenes/scores.tscn" id="5_m4gqw"]
+[ext_resource type="PackedScene" uid="uid://mqc6y7xeikkl" path="res://Scenes/scores.tscn" id="5_m4gqw"]
 [ext_resource type="PackedScene" uid="uid://ded082qtltdwu" path="res://Scenes/shop_ui.tscn" id="6_ff3is"]
 [ext_resource type="Texture2D" uid="uid://nnfdhy1chvh2" path="res://Assets/player/Smoke VFX C2.png" id="8_w5hl2"]
 [ext_resource type="Texture2D" uid="uid://ckfbqx44aluju" path="res://Assets/2d_lights_and_shadows_neutral_point_light.png" id="9_5bb7g"]
 [ext_resource type="PackedScene" uid="uid://dnjqhe1xm2jou" path="res://Scenes/pause.tscn" id="11_qd6pt"]
-[ext_resource type="PackedScene" uid="uid://cbqs774son3b7" path="res://Scenes/publish_score.tscn" id="12_e7jdr"]
-[ext_resource type="PackedScene" uid="uid://dim0l1m2hvxv2" path="res://Scenes/mobile_controls.tscn" id="13_niia4"]
-[ext_resource type="PackedScene" uid="uid://dl1qkp0d6pjsw" path="res://Scenes/credits.tscn" id="14_8wcob"]
-[ext_resource type="PackedScene" uid="uid://dppdre21mytqi" path="res://Scenes/skins.tscn" id="15_uviod"]
-[ext_resource type="PackedScene" uid="uid://2qswlupoc4o7" path="res://Scenes/warning.tscn" id="16_riow3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w87s"]
 radius = 16.0
@@ -143,9 +138,6 @@ collision_mask = 258
 motion_mode = 1
 script = ExtResource("1_1bdvb")
 
-[node name="mobile_controls" parent="." unique_id=1704354393 instance=ExtResource("13_niia4")]
-visible = false
-
 [node name="main_menu" parent="." unique_id=1757584970 instance=ExtResource("2_6qj0g")]
 
 [node name="game_over" parent="." unique_id=1715558568 instance=ExtResource("3_uxuvh")]
@@ -217,15 +209,6 @@ texture = ExtResource("9_5bb7g")
 texture_scale = 7.0
 
 [node name="pause" parent="." unique_id=1835369320 instance=ExtResource("11_qd6pt")]
-
-[node name="publish_score" parent="." unique_id=903857789 instance=ExtResource("12_e7jdr")]
-
-[node name="credits" parent="." unique_id=1991266608 instance=ExtResource("14_8wcob")]
-
-[node name="skins" parent="." unique_id=1378123922 instance=ExtResource("15_uviod")]
-
-[node name="warning" parent="." unique_id=1534458829 instance=ExtResource("16_riow3")]
-visible = false
 
 [connection signal="timeout" from="dash_cooldown_timer" to="." method="_on_dash_cooldown_timer_timeout"]
 [connection signal="timeout" from="dash_duration_timer" to="." method="_on_dash_duration_timer_timeout"]

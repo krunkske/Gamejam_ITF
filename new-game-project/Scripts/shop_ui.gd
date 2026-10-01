@@ -15,7 +15,6 @@ extends CanvasLayer
 
 @onready var playerNode = load.player
 @onready var hudMoneyNode = load.hud.get_child(0).get_child(5)
-@onready var dogNode = load.dog
 
 @onready var dash_cooldown_timer_node = playerNode.get_child(6)
 @onready var dash_duration_timer_node = playerNode.get_child(7)
@@ -157,11 +156,6 @@ func _on_resistance_pressed():
 		load.resistance += 0.1
 		bought_something = true
 
-func _on_dog_pressed():
-	if player_can_buy("dog companion", get_price("dog"), $Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/dog):
-		dogNode.global_position = playerNode.global_position
-		bought_something = true
-
 func resetShop():
 	items = [
 		{"name": "speed", "price": 1000, "amount": 0, "max_amount": 3},
@@ -171,7 +165,6 @@ func resetShop():
 		{"name": "max_health", "price": 2500, "amount": 0, "max_amount": 2},
 		{"name": "damage", "price": 2500, "amount":0, "max_amount": 2},
 		{"name": "resistance", "price": 3000, "amount":0, "max_amount": 2},
-		{"name": "dog", "price": 3000, "amount":0, "max_amount": 1}
 	]
 	bought_something = false
 	
@@ -189,4 +182,3 @@ func resetShop():
 	$Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/max_health.text = "+20 max health\n2500 coins"
 	$Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/damage.text = "+20% damage\n2500 coins"
 	$Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/resistance.text = "+10% resistance\n3000 coins"
-	$Control/PanelContainer/VBoxContainer/HBoxContainer/GridContainer/dog.text = "dog compainion\n3000 coins"

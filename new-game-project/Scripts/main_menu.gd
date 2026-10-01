@@ -2,8 +2,7 @@ extends CanvasLayer
 
 @onready var main = load.main
 @onready var highscoresNode = load.highscoresNode
-@onready var highscoresControlNode = get_tree().root.get_child(1).get_child(1).get_child(3).get_child(1)
-@onready var creditsNode = load.creditsNode
+@onready var highscoresControlNode = highscoresNode.get_node("Control")
 @onready var playerNode = load.player
 var gun_int = 0
 
@@ -12,30 +11,14 @@ var sequence = ["up", "up", "down", "down", "left", "right", "left", "right"]
 var sequence_index = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	highscoresControlNode.set_visible(false)
 	$Control/PanelContainer._set_size(get_viewport().get_visible_rect().size)
 	
-	if OS.has_feature("nameweb_android") or OS.has_feature("web_ios"):
-		pass
-	var index = load.get_value("fruit")
-	if index == null:
-		index = 0
-	$Control/PanelContainer/VBoxContainer/HBoxContainer/OptionButton._select_int(index)
-	if index == 0:
-		$Control/PanelContainer/VBoxContainer/HBoxContainer/Stats.text = "Damage: 40"
-	elif index == 1:
-		$Control/PanelContainer/VBoxContainer/HBoxContainer/Stats.text = "Damage: 25"
-	elif index == 2:
-		$Control/PanelContainer/VBoxContainer/HBoxContainer/Stats.text = "Damage: 15 \n Pellets: 6"
 	get_local_highscore()
 	
-	#wont work due to retry
-	#if load.get_value("local_highscore") == null:
-		#$Control/PanelContainer/VBoxContainer/publish_local_highscore.set_visible(false)
 
 func _on_button_pressed():
 	$Control.set_visible(false)
-	gun_int = $Control/PanelContainer/VBoxContainer/HBoxContainer/OptionButton.selected
+	gun_int = 1
 	if gun_int == 0:
 		main.gun_type = "banana"
 	elif gun_int == 1:
@@ -50,11 +33,6 @@ func _on_scores_pressed():
 	$Control.set_visible(false)
 	highscoresNode.get_scores = true
 	$Control/AudioStreamPlayer.play()
-
-func _on_credits_pressed():
-	$Control/AudioStreamPlayer.play()
-	creditsNode.set_visible(true)
-	$Control.set_visible(false)
 
 func _on_option_button_item_selected(index):
 	if index == 0:
@@ -91,15 +69,6 @@ func set_resolution(scale_factor):
 func get_local_highscore():
 	if load.get_value("local_highscore") != null:
 		$Control/PanelContainer/VBoxContainer/HBoxContainer6/local_highscore.text = "local highscore: " + str(load.get_value("local_highscore"))
-	if load.get_value("level") != null:
-		$Control/PanelContainer/VBoxContainer/HBoxContainer9/level.text = "level " + str(load.get_value("level"))
-	if load.get_value("level_progress") != null:
-		$Control/PanelContainer/VBoxContainer/HBoxContainer9/levelBar.value = load.get_value("level_progress")
-
-func _on_skins_pressed():
-	$Control.set_visible(false)
-	load.skinsNode.set_visible(true)
-
 
 func _on_left_pressed():
 	if sequence[sequence_index] == "left":

@@ -4,17 +4,14 @@ var config = ConfigFile.new()
 
 
 @onready var main = get_tree().root.get_child(1)
-@onready var player = get_tree().root.get_child(1).get_child(1)
-@onready var dog = get_tree().root.get_child(1).get_child(9)
-@onready var highscoresNode = get_tree().root.get_child(1).get_child(1).get_child(3)
-@onready var publishNode = get_tree().root.get_child(1).get_child(1).get_child(18).get_child(0)
-@onready var creditsNode = get_tree().root.get_child(1).get_child(1).get_child(19)
-@onready var shopUINode =  get_tree().root.get_child(1).get_child(1).get_child(4)
-@onready var mainMenuNode = get_tree().root.get_child(1).get_child(1).get_child(1)
-@onready var mainMenuControlNode = get_tree().root.get_child(1).get_child(1).get_child(1).get_child(0)
-@onready var gameOverControlNode = get_tree().root.get_child(1).get_child(1).get_child(2).get_child(0)
-@onready var hud = get_tree().root.get_child(1).get_child(1).get_child(5)
-@onready var skinsNode = get_tree().root.get_child(1).get_child(1).get_child(20)
+@onready var player = main.get_node("Player")
+@onready var highscoresNode = player.get_node("highscores")
+@onready var shopUINode =  player.get_node("shopUI")
+@onready var mainMenuNode = player.get_node("main_menu")
+@onready var mainMenuControlNode = mainMenuNode.get_node("Control")
+@onready var gameOverControlNode = player.get_node("game_over/Control")
+@onready var hud = main.get_node("Player").get_node("HUD")
+
 #general
 var money = 0
 var totalMoney = 0

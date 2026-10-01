@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 const bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var main = load.main
-@onready var dogNode = load.dog
 var gunData
 var speed = 200
 var prev_speed = 200
@@ -119,7 +118,6 @@ func death():
 	weapon_allowed_attack = false
 	damaged = true
 	load.playing = false
-	load.dogActive = false
 	$AnimatedSprite2D.play("death")
 	$Node2D.hide()
 	$HUD/Control/hp.text = str(load.health)

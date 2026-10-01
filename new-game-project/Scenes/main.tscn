@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://t7dltt5pbluq" path="res://Scenes/player.tscn" id="1_4k60e"]
 [ext_resource type="PackedScene" uid="uid://dm554cq81fehe" path="res://Scenes/mapCollision.tscn" id="1_fwo41"]
 [ext_resource type="Script" uid="uid://do3g2f77ihor2" path="res://Scripts/main.gd" id="1_ldsif"]
-[ext_resource type="PackedScene" uid="uid://g4ip74adu6n8" path="res://Scenes/dog.tscn" id="3_2v5gr"]
 [ext_resource type="PackedScene" uid="uid://iuco36bg17ms" path="res://Scenes/shop.tscn" id="3_wb2hj"]
 
 [node name="Node" type="Node" unique_id=2132704150]
@@ -38,9 +37,6 @@ wait_time = 3.0
 
 [node name="Timer_difficulty_increase" type="Timer" parent="." unique_id=2130737026]
 wait_time = 30.0
-
-[node name="dog" parent="." unique_id=1425163265 instance=ExtResource("3_2v5gr")]
-position = Vector2(-2896, -2362)
 
 [connection signal="start" from="." to="Player" method="_on_node_start"]
 [connection signal="timeout" from="Timer_enemy_spawn" to="." method="_on_timer_enemy_spawn_timeout"]

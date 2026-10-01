@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var scoresNode = load.highscoresNode
 @onready var scoresControlNode = scoresNode.get_child(1)
-@onready var publishNode = load.publishNode
 @onready var main = load.main
 @onready var main_menu = load.mainMenuNode
 
@@ -14,7 +13,6 @@ func _ready():
 
 func calculate_score():
 	if not load.noScore:
-		publishNode.get_child(0).get_child(0).get_child(0).text = "score: " + str(load.score)
 		
 		var local_highscore = load.get_value("local_highscore")
 		var level = load.get_value("level")
@@ -85,5 +83,3 @@ func _on_scores_pressed():
 func _on_publish_score_pressed():
 	$Control/AudioStreamPlayer.play()
 	$Control.set_visible(false)
-	publishNode.set_visible(true)
-
