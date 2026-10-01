@@ -13,6 +13,7 @@ func _ready() -> void:
 	queue_free()
 
 
+
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 
